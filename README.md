@@ -1,7 +1,7 @@
 
-##个人博客，React练手项目
+## 个人博客，React练手项目
 
-###TODO List
+### TODO List
 - ~~react-router~~
 - 对接wordpress rest api
 - redux
