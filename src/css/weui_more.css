@@ -1,0 +1,96 @@
+
+.weui-dialog {
+  margin: 0 auto;
+}
+
+.weui-article {
+  position: relative;
+  background: white;
+  line-height: 170%;
+}
+
+.weui-article p,
+.weui-article h1,
+.weui-article h2,
+.weui-article h3,
+.weui-article h4,
+.weui-article h5,
+.weui-article h6 {
+  min-height: 12px;
+}
+
+.weui-article .top-bar-space {
+  width: 100%;
+  height: 20px;
+}
+
+.weui-article .top-bar {
+  width: 100%;
+  font-size: 12px;
+  position: absolute;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 10px;
+  top: 10px;
+  left: 0;
+  vertical-align: top;
+  color: #888;
+}
+
+.weui-article .top-bar .icon {
+  font-size: 12px;
+  margin-right: 5px;
+  vertical-align: top;
+}
+
+.weui-article .top-bar .left {
+  float: left;
+  display: inline-flex;
+  align-items: center;
+}
+
+.weui-article .top-bar .right {
+  float: right;
+  display: inline-flex;
+  align-items: center;
+}
+
+.weui.icon-box {
+    margin-bottom: 25px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.weui.icon-box.center {
+  justify-content: center;
+}
+
+.weui.icon-box i {
+    margin-right: 0.5rem;
+}
+
+.weui.icon-box .icon-box__ctn {
+    -webkit-flex-shrink: 100;
+    flex-shrink: 100;
+}
+
+.weui.icon-box .icon-box__title {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.weui.icon-box .icon-box__desc {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #888;
+}
+
+.weui-btn-area.pq-modify {
+  margin-left: 0;
+  margin-right: 0;
+}
+

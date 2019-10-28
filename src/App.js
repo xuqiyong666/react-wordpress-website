@@ -1,26 +1,76 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './css/layout.css'
+import './css/weui_more.css'
+import './css/article_exhibition.css'
+import './css/article_list.css'
+import './css/article_list_small.css'
+import './css/flow_two_grid.css'
+import './css/pure_css_animated_background.css'
+import './css/flow_article_cards.css'
+import './css/login_box.css'
+import './css/console.css'
+import './css/grid.css'
+import './css/button.css'
+import './css/input.css'
+import './css/form.css'
+import './css/message.css'
+import './css/checkbox.css'
+import './css/info_card_v1.css'
+import './css/info_card_v2.css'
+import './css/text_info_card_v1.css'
+import './css/table_card_v1.css'
+import './css/triangle.css'
+import './css/simple_card.css'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import HomePage from './HomePage.js'
+import NotFoundPage from './pages/NotFoundPage.js'
+
+
+import { CategoryPageWithParams, CategoryPageWithQuery } from './pages/CategoryPage.js'
+import { ArticlePageWithParams } from './pages/ArticlePage.js'
+
+const scrollery = require('cssplus/scrollery')
+
+class App extends React.Component {
+
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/category">
+            <CategoryPageWithQuery />
+          </Route>
+          <Route exact path="/category/:categoryId">
+            <CategoryPageWithParams />
+          </Route>
+          <Route exact path="/article/:articleId">
+            <ArticlePageWithParams />
+          </Route>
+          <Route>
+            <NotFoundPage />
+          </Route>
+        </Switch>
+      </Router>
+    )
+  }
+
+  componentDidMount() {
+    this.activeScrollery()
+  }
+
+  activeScrollery() {
+    scrollery.load()
+  }
 }
 
 export default App;

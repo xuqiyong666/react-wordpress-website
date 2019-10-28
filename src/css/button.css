@@ -1,0 +1,3833 @@
+
+/*******************************
+            Button
+*******************************/
+
+.pq.button,
+.pq.button * {
+  box-sizing: border-box;
+}
+
+.pq.button {
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: none;
+  border: none;
+  vertical-align: baseline;
+  background: #E0E1E2 none;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  margin: 0em 0.25em 0em 0em;
+  padding: 0.78571429em 1.5em 0.78571429em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: bold;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.28571429rem;
+  -webkit-box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, background 0.1s ease, -webkit-box-shadow 0.1s ease;
+  transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, background 0.1s ease, -webkit-box-shadow 0.1s ease;
+  transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+  transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease, -webkit-box-shadow 0.1s ease;
+  will-change: '';
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/*******************************
+            States
+*******************************/
+
+
+/*--------------
+      Hover
+---------------*/
+
+.pq.button:hover {
+  background-color: #CACBCD;
+  background-image: none;
+  -webkit-box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+  color: rgba(0, 0, 0, 0.8);
+}
+.pq.button:hover .icon {
+  opacity: 0.85;
+}
+
+/*--------------
+      Focus
+---------------*/
+
+.pq.button:focus {
+  background-color: #CACBCD;
+  color: rgba(0, 0, 0, 0.8);
+  background-image: '' !important;
+  -webkit-box-shadow: '' !important;
+          box-shadow: '' !important;
+}
+.pq.button:focus .icon {
+  opacity: 0.85;
+}
+
+/*--------------
+      Down
+---------------*/
+
+.pq.button:active,
+.pq.active.button:active {
+  background-color: #BABBBC;
+  background-image: '';
+  color: rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 0px 0px 0px 1px transparent inset, none;
+          box-shadow: 0px 0px 0px 1px transparent inset, none;
+}
+
+/*--------------
+     Active
+---------------*/
+
+.pq.active.button {
+  background-color: #C0C1C2;
+  background-image: none;
+  -webkit-box-shadow: 0px 0px 0px 1px transparent inset;
+          box-shadow: 0px 0px 0px 1px transparent inset;
+  color: rgba(0, 0, 0, 0.95);
+}
+.pq.active.button:hover {
+  background-color: #C0C1C2;
+  background-image: none;
+  color: rgba(0, 0, 0, 0.95);
+}
+.pq.active.button:active {
+  background-color: #C0C1C2;
+  background-image: none;
+}
+
+/*--------------
+    Loading
+---------------*/
+
+
+/* Specificity hack */
+.pq.loading.loading.loading.loading.loading.loading.button {
+  position: relative;
+  cursor: default;
+  text-shadow: none !important;
+  color: transparent !important;
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transition: all 0s linear, opacity 0.1s ease;
+  transition: all 0s linear, opacity 0.1s ease;
+}
+.pq.loading.button:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  margin: -0.64285714em 0em 0em -0.64285714em;
+  width: 1.28571429em;
+  height: 1.28571429em;
+  border-radius: 500rem;
+  border: 0.2em solid rgba(0, 0, 0, 0.15);
+}
+.pq.loading.button:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  margin: -0.64285714em 0em 0em -0.64285714em;
+  width: 1.28571429em;
+  height: 1.28571429em;
+  -webkit-animation: button-spin 0.6s linear;
+          animation: button-spin 0.6s linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  border-radius: 500rem;
+  border-color: #FFFFFF transparent transparent;
+  border-style: solid;
+  border-width: 0.2em;
+  -webkit-box-shadow: 0px 0px 0px 1px transparent;
+          box-shadow: 0px 0px 0px 1px transparent;
+}
+.pq.labeled.icon.loading.button .icon {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+@-webkit-keyframes button-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes button-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.pq.basic.loading.button:not(.inverted):before {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.pq.basic.loading.button:not(.inverted):after {
+  border-top-color: #767676;
+}
+
+/*-------------------
+      Disabled
+--------------------*/
+
+.pq.buttons .disabled.button,
+.pq.disabled.button,
+.pq.button:disabled,
+.pq.disabled.button:hover,
+.pq.disabled.active.button {
+  cursor: default;
+  opacity: 0.45 !important;
+  background-image: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+/* Basic Group With Disabled */
+.pq.basic.buttons .pq.disabled.button {
+  border-color: rgba(34, 36, 38, 0.5);
+}
+
+
+/*******************************
+             Types
+*******************************/
+
+
+/*-------------------
+       Animated
+--------------------*/
+
+.pq.animated.button {
+  position: relative;
+  overflow: hidden;
+  padding-right: 0em !important;
+  vertical-align: middle;
+  z-index: 1;
+}
+.pq.animated.button .content {
+  will-change: transform, opacity;
+}
+.pq.animated.button .visible.content {
+  position: relative;
+  margin-right: 1.5em;
+}
+.pq.animated.button .hidden.content {
+  position: absolute;
+  width: 100%;
+}
+
+/* Horizontal */
+.pq.animated.button .visible.content,
+.pq.animated.button .hidden.content {
+  -webkit-transition: right 0.3s ease 0s;
+  transition: right 0.3s ease 0s;
+}
+.pq.animated.button .visible.content {
+  left: auto;
+  right: 0%;
+}
+.pq.animated.button .hidden.content {
+  top: 50%;
+  left: auto;
+  right: -100%;
+  margin-top: -0.5em;
+}
+.pq.animated.button:focus .visible.content,
+.pq.animated.button:hover .visible.content {
+  left: auto;
+  right: 200%;
+}
+.pq.animated.button:focus .hidden.content,
+.pq.animated.button:hover .hidden.content {
+  left: auto;
+  right: 0%;
+}
+
+/* Vertical */
+.pq.vertical.animated.button .visible.content,
+.pq.vertical.animated.button .hidden.content {
+  -webkit-transition: top 0.3s ease, -webkit-transform 0.3s ease;
+  transition: top 0.3s ease, -webkit-transform 0.3s ease;
+  transition: top 0.3s ease, transform 0.3s ease;
+  transition: top 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.pq.vertical.animated.button .visible.content {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  right: auto;
+}
+.pq.vertical.animated.button .hidden.content {
+  top: -50%;
+  left: 0%;
+  right: auto;
+}
+.pq.vertical.animated.button:focus .visible.content,
+.pq.vertical.animated.button:hover .visible.content {
+  -webkit-transform: translateY(200%);
+          transform: translateY(200%);
+  right: auto;
+}
+.pq.vertical.animated.button:focus .hidden.content,
+.pq.vertical.animated.button:hover .hidden.content {
+  top: 50%;
+  right: auto;
+}
+
+/* Fade */
+.pq.fade.animated.button .visible.content,
+.pq.fade.animated.button .hidden.content {
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.pq.fade.animated.button .visible.content {
+  left: auto;
+  right: auto;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.pq.fade.animated.button .hidden.content {
+  opacity: 0;
+  left: 0%;
+  right: auto;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+.pq.fade.animated.button:focus .visible.content,
+.pq.fade.animated.button:hover .visible.content {
+  left: auto;
+  right: auto;
+  opacity: 0;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+.pq.fade.animated.button:focus .hidden.content,
+.pq.fade.animated.button:hover .hidden.content {
+  left: 0%;
+  right: auto;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+/*-------------------
+       Inverted
+--------------------*/
+
+.pq.inverted.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #FFFFFF inset !important;
+          box-shadow: 0px 0px 0px 2px #FFFFFF inset !important;
+  background: transparent none;
+  color: #FFFFFF;
+  text-shadow: none !important;
+}
+
+/* Group */
+.pq.inverted.buttons .button {
+  margin: 0px 0px 0px -2px;
+}
+.pq.inverted.buttons .button:first-child {
+  margin-left: 0em;
+}
+.pq.inverted.vertical.buttons .button {
+  margin: 0px 0px -2px 0px;
+}
+.pq.inverted.vertical.buttons .button:first-child {
+  margin-top: 0em;
+}
+
+/* States */
+
+/* Hover */
+.pq.inverted.button:hover {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 0px 2px #FFFFFF inset !important;
+          box-shadow: 0px 0px 0px 2px #FFFFFF inset !important;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Active / Focus */
+.pq.inverted.button:focus,
+.pq.inverted.button.active {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 0px 2px #FFFFFF inset !important;
+          box-shadow: 0px 0px 0px 2px #FFFFFF inset !important;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Active Focus */
+.pq.inverted.button.active:focus {
+  background: #DCDDDE;
+  -webkit-box-shadow: 0px 0px 0px 2px #DCDDDE inset !important;
+          box-shadow: 0px 0px 0px 2px #DCDDDE inset !important;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/*-------------------
+    Labeled Button
+--------------------*/
+
+.pq.labeled.button:not(.icon) {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: none !important;
+  padding: 0px !important;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+.pq.labeled.button > .button {
+  margin: 0px;
+}
+.pq.labeled.button > .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px 0px 0px -1px !important;
+  padding: '';
+  font-size: 1em;
+  border-color: rgba(34, 36, 38, 0.15);
+}
+
+/* Tag */
+.pq.labeled.button > .tag.label:before {
+  width: 1.85em;
+  height: 1.85em;
+}
+
+/* Right */
+.pq.labeled.button:not([class*="left labeled"]) > .button {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.pq.labeled.button:not([class*="left labeled"]) > .label {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+/* Left Side */
+.pq[class*="left labeled"].button > .button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.pq[class*="left labeled"].button > .label {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/*-------------------
+       Social
+--------------------*/
+
+
+/* Facebook */
+.pq.facebook.button {
+  background-color: #3B5998;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.facebook.button:hover {
+  background-color: #304d8a;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.facebook.button:active {
+  background-color: #2d4373;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Twitter */
+.pq.twitter.button {
+  background-color: #55ACEE;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.twitter.button:hover {
+  background-color: #35a2f4;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.twitter.button:active {
+  background-color: #2795e9;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Google Plus */
+.pq.google.plus.button {
+  background-color: #DD4B39;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.google.plus.button:hover {
+  background-color: #e0321c;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.google.plus.button:active {
+  background-color: #c23321;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Linked In */
+.pq.linkedin.button {
+  background-color: #1F88BE;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.linkedin.button:hover {
+  background-color: #147baf;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.linkedin.button:active {
+  background-color: #186992;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* YouTube */
+.pq.youtube.button {
+  background-color: #FF0000;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.youtube.button:hover {
+  background-color: #e60000;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.youtube.button:active {
+  background-color: #cc0000;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Instagram */
+.pq.instagram.button {
+  background-color: #49769C;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.instagram.button:hover {
+  background-color: #3d698e;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.instagram.button:active {
+  background-color: #395c79;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Pinterest */
+.pq.pinterest.button {
+  background-color: #BD081C;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.pinterest.button:hover {
+  background-color: #ac0013;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.pinterest.button:active {
+  background-color: #8c0615;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* VK */
+.pq.vk.button {
+  background-color: #4D7198;
+  color: #FFFFFF;
+  background-image: none;
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.vk.button:hover {
+  background-color: #41648a;
+  color: #FFFFFF;
+}
+.pq.vk.button:active {
+  background-color: #3c5876;
+  color: #FFFFFF;
+}
+
+/*--------------
+     Icon
+---------------*/
+
+.pq.button > .icon:not(.button) {
+  height: 0.85714286em;
+  opacity: 0.8;
+  margin: 0em 0.42857143em 0em -0.21428571em;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+  vertical-align: '';
+  color: '';
+}
+.pq.button:not(.icon) > .icon:not(.button):not(.dropdown) {
+  margin: 0em 0.42857143em 0em -0.21428571em;
+}
+.pq.button:not(.icon) > .right.icon:not(.button):not(.dropdown) {
+  margin: 0em -0.21428571em 0em 0.42857143em;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+
+/*-------------------
+       Floated
+--------------------*/
+
+.pq[class*="left floated"].buttons,
+.pq[class*="left floated"].button {
+  float: left;
+  margin-left: 0em;
+  margin-right: 0.25em;
+}
+.pq[class*="right floated"].buttons,
+.pq[class*="right floated"].button {
+  float: right;
+  margin-right: 0em;
+  margin-left: 0.25em;
+}
+
+/*-------------------
+       Compact
+--------------------*/
+
+.pq.compact.buttons .button,
+.pq.compact.button {
+  padding: 0.58928571em 1.125em 0.58928571em;
+}
+.pq.compact.icon.buttons .button,
+.pq.compact.icon.button {
+  padding: 0.58928571em 0.58928571em 0.58928571em;
+}
+.pq.compact.labeled.icon.buttons .button,
+.pq.compact.labeled.icon.button {
+  padding: 0.58928571em 3.69642857em 0.58928571em;
+}
+
+/*-------------------
+        Sizes
+--------------------*/
+
+.pq.mini.buttons .button,
+.pq.mini.buttons .or,
+.pq.mini.button {
+  font-size: 0.78571429rem;
+}
+.pq.tiny.buttons .button,
+.pq.tiny.buttons .or,
+.pq.tiny.button {
+  font-size: 0.85714286rem;
+}
+.pq.small.buttons .button,
+.pq.small.buttons .or,
+.pq.small.button {
+  font-size: 0.92857143rem;
+}
+.pq.buttons .button,
+.pq.buttons .or,
+.pq.button {
+  font-size: 1rem;
+}
+.pq.large.buttons .button,
+.pq.large.buttons .or,
+.pq.large.button {
+  font-size: 1.14285714rem;
+}
+.pq.big.buttons .button,
+.pq.big.buttons .or,
+.pq.big.button {
+  font-size: 1.28571429rem;
+}
+.pq.huge.buttons .button,
+.pq.huge.buttons .or,
+.pq.huge.button {
+  font-size: 1.42857143rem;
+}
+.pq.massive.buttons .button,
+.pq.massive.buttons .or,
+.pq.massive.button {
+  font-size: 1.71428571rem;
+}
+
+/*--------------
+    Icon Only
+---------------*/
+
+.pq.icon.buttons .button,
+.pq.icon.button {
+  padding: 0.78571429em 0.78571429em 0.78571429em;
+}
+.pq.icon.buttons .button > .icon,
+.pq.icon.button > .icon {
+  opacity: 0.9;
+  margin: 0em !important;
+  vertical-align: top;
+}
+
+/*-------------------
+        Basic
+--------------------*/
+
+.pq.basic.buttons .button,
+.pq.basic.button {
+  background: transparent none !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+  font-weight: normal;
+  border-radius: 0.28571429rem;
+  text-transform: none;
+  text-shadow: none !important;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.basic.buttons {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 0.28571429rem;
+}
+.pq.basic.buttons .button {
+  border-radius: 0em;
+}
+.pq.basic.buttons .button:hover,
+.pq.basic.button:hover {
+  background: #FFFFFF !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.basic.buttons .button:focus,
+.pq.basic.button:focus {
+  background: #FFFFFF !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.basic.buttons .button:active,
+.pq.basic.button:active {
+  background: #F8F8F8 !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.basic.buttons .active.button,
+.pq.basic.active.button {
+  background: rgba(0, 0, 0, 0.05) !important;
+  -webkit-box-shadow: '' !important;
+          box-shadow: '' !important;
+  color: rgba(0, 0, 0, 0.95) !important;
+}
+.pq.basic.buttons .active.button:hover,
+.pq.basic.active.button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Vertical */
+.pq.basic.buttons .button:hover {
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset inset;
+          box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset inset;
+}
+.pq.basic.buttons .button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px rgba(34, 36, 38, 0.15) inset inset;
+          box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px rgba(34, 36, 38, 0.15) inset inset;
+}
+.pq.basic.buttons .active.button {
+  -webkit-box-shadow: '' !important;
+          box-shadow: '' !important;
+}
+
+/* Standard Basic Inverted */
+.pq.basic.inverted.buttons .button,
+.pq.basic.inverted.button {
+  background-color: transparent !important;
+  color: #F9FAFB !important;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+}
+.pq.basic.inverted.buttons .button:hover,
+.pq.basic.inverted.button:hover {
+  color: #FFFFFF !important;
+  -webkit-box-shadow: 0px 0px 0px 2px #ffffff inset !important;
+          box-shadow: 0px 0px 0px 2px #ffffff inset !important;
+}
+.pq.basic.inverted.buttons .button:focus,
+.pq.basic.inverted.button:focus {
+  color: #FFFFFF !important;
+  -webkit-box-shadow: 0px 0px 0px 2px #ffffff inset !important;
+          box-shadow: 0px 0px 0px 2px #ffffff inset !important;
+}
+.pq.basic.inverted.buttons .button:active,
+.pq.basic.inverted.button:active {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.9) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.9) inset !important;
+}
+.pq.basic.inverted.buttons .active.button,
+.pq.basic.inverted.active.button {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  text-shadow: none;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.7) inset;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.7) inset;
+}
+.pq.basic.inverted.buttons .active.button:hover,
+.pq.basic.inverted.active.button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-box-shadow: 0px 0px 0px 2px #ffffff inset !important;
+          box-shadow: 0px 0px 0px 2px #ffffff inset !important;
+}
+
+/* Basic Group */
+.pq.basic.buttons .button {
+  border-left: 1px solid rgba(34, 36, 38, 0.15);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.pq.basic.vertical.buttons .button {
+  border-left: none;
+}
+.pq.basic.vertical.buttons .button {
+  border-left-width: 0px;
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
+}
+.pq.basic.vertical.buttons .button:first-child {
+  border-top-width: 0px;
+}
+
+/*--------------
+  Labeled Icon
+---------------*/
+
+.pq.labeled.icon.buttons .button,
+.pq.labeled.icon.button {
+  position: relative;
+  padding-left: 4.07142857em !important;
+  padding-right: 1.5em !important;
+}
+
+/* Left Labeled */
+.pq.labeled.icon.buttons > .button > .icon,
+.pq.labeled.icon.button > .icon {
+  position: absolute;
+  height: 100%;
+  line-height: 1;
+  border-radius: 0px;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  text-align: center;
+  margin: 0em;
+  width: 2.57142857em;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: '';
+  -webkit-box-shadow: -1px 0px 0px 0px transparent inset;
+          box-shadow: -1px 0px 0px 0px transparent inset;
+}
+
+/* Left Labeled */
+.pq.labeled.icon.buttons > .button > .icon,
+.pq.labeled.icon.button > .icon {
+  top: 0em;
+  left: 0em;
+}
+
+/* Right Labeled */
+.pq[class*="right labeled"].icon.button {
+  padding-right: 4.07142857em !important;
+  padding-left: 1.5em !important;
+}
+.pq[class*="right labeled"].icon.button > .icon {
+  left: auto;
+  right: 0em;
+  border-radius: 0px;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  -webkit-box-shadow: 1px 0px 0px 0px transparent inset;
+          box-shadow: 1px 0px 0px 0px transparent inset;
+}
+.pq.labeled.icon.buttons > .button > .icon:before,
+.pq.labeled.icon.button > .icon:before,
+.pq.labeled.icon.buttons > .button > .icon:after,
+.pq.labeled.icon.button > .icon:after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.pq.labeled.icon.buttons .button > .icon {
+  border-radius: 0em;
+}
+.pq.labeled.icon.buttons .button:first-child > .icon {
+  border-top-left-radius: 0.28571429rem;
+  border-bottom-left-radius: 0.28571429rem;
+}
+.pq.labeled.icon.buttons .button:last-child > .icon {
+  border-top-right-radius: 0.28571429rem;
+  border-bottom-right-radius: 0.28571429rem;
+}
+.pq.vertical.labeled.icon.buttons .button:first-child > .icon {
+  border-radius: 0em;
+  border-top-left-radius: 0.28571429rem;
+}
+.pq.vertical.labeled.icon.buttons .button:last-child > .icon {
+  border-radius: 0em;
+  border-bottom-left-radius: 0.28571429rem;
+}
+
+/* Fluid Labeled */
+.pq.fluid[class*="left labeled"].icon.button,
+.pq.fluid[class*="right labeled"].icon.button {
+  padding-left: 1.5em !important;
+  padding-right: 1.5em !important;
+}
+
+/*--------------
+     Toggle
+---------------*/
+
+
+/* Toggle (Modifies active state to give affordances) */
+.pq.toggle.buttons .active.button,
+.pq.buttons .button.toggle.active,
+.pq.button.toggle.active {
+  background-color: #21BA45 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  text-shadow: none;
+  color: #FFFFFF !important;
+}
+.pq.button.toggle.active:hover {
+  background-color: #16ab39 !important;
+  text-shadow: none;
+  color: #FFFFFF !important;
+}
+
+/*--------------
+    Circular
+---------------*/
+
+.pq.circular.button {
+  border-radius: 10em;
+}
+.pq.circular.button > .icon {
+  width: 1em;
+  vertical-align: baseline;
+}
+
+/*-------------------
+      Or Buttons
+--------------------*/
+
+.pq.buttons .or {
+  position: relative;
+  width: 0.3em;
+  height: 2.57142857em;
+  z-index: 3;
+}
+.pq.buttons .or:before {
+  position: absolute;
+  text-align: center;
+  border-radius: 500rem;
+  content: 'or';
+  top: 50%;
+  left: 50%;
+  background-color: #FFFFFF;
+  text-shadow: none;
+  margin-top: -0.89285714em;
+  margin-left: -0.89285714em;
+  width: 1.78571429em;
+  height: 1.78571429em;
+  line-height: 1.78571429em;
+  color: rgba(0, 0, 0, 0.4);
+  font-style: normal;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 0px 0px 1px transparent inset;
+          box-shadow: 0px 0px 0px 1px transparent inset;
+}
+.pq.buttons .or[data-text]:before {
+  content: attr(data-text);
+}
+
+/* Fluid Or */
+.pq.fluid.buttons .or {
+  width: 0em !important;
+}
+.pq.fluid.buttons .or:after {
+  display: none;
+}
+
+/*-------------------
+       Attached
+--------------------*/
+
+
+/* Singular */
+.pq.attached.button {
+  position: relative;
+  display: block;
+  margin: 0em;
+  border-radius: 0em;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) !important;
+          box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) !important;
+}
+
+/* Top / Bottom */
+.pq.attached.top.button {
+  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+}
+.pq.attached.bottom.button {
+  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+}
+
+/* Left / Right */
+.pq.left.attached.button {
+  display: inline-block;
+  border-left: none;
+  text-align: right;
+  padding-right: 0.75em;
+  border-radius: 0.28571429rem 0em 0em 0.28571429rem;
+}
+.pq.right.attached.button {
+  display: inline-block;
+  text-align: left;
+  padding-left: 0.75em;
+  border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+}
+
+/* Plural */
+.pq.attached.buttons {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0em;
+  width: auto !important;
+  z-index: 2;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+.pq.attached.buttons .button {
+  margin: 0em;
+}
+.pq.attached.buttons .button:first-child {
+  border-radius: 0em;
+}
+.pq.attached.buttons .button:last-child {
+  border-radius: 0em;
+}
+
+/* Top / Bottom */
+.pq[class*="top attached"].buttons {
+  margin-bottom: -1px;
+  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+}
+.pq[class*="top attached"].buttons .button:first-child {
+  border-radius: 0.28571429rem 0em 0em 0em;
+}
+.pq[class*="top attached"].buttons .button:last-child {
+  border-radius: 0em 0.28571429rem 0em 0em;
+}
+.pq[class*="bottom attached"].buttons {
+  margin-top: -1px;
+  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+}
+.pq[class*="bottom attached"].buttons .button:first-child {
+  border-radius: 0em 0em 0em 0.28571429rem;
+}
+.pq[class*="bottom attached"].buttons .button:last-child {
+  border-radius: 0em 0em 0.28571429rem 0em;
+}
+
+/* Left / Right */
+.pq[class*="left attached"].buttons {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: 0em;
+  margin-left: -1px;
+  border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+}
+.pq[class*="left attached"].buttons .button:first-child {
+  margin-left: -1px;
+  border-radius: 0em 0.28571429rem 0em 0em;
+}
+.pq[class*="left attached"].buttons .button:last-child {
+  margin-left: -1px;
+  border-radius: 0em 0em 0.28571429rem 0em;
+}
+.pq[class*="right attached"].buttons {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-left: 0em;
+  margin-right: -1px;
+  border-radius: 0.28571429rem 0em 0em 0.28571429rem;
+}
+.pq[class*="right attached"].buttons .button:first-child {
+  margin-left: -1px;
+  border-radius: 0.28571429rem 0em 0em 0em;
+}
+.pq[class*="right attached"].buttons .button:last-child {
+  margin-left: -1px;
+  border-radius: 0em 0em 0em 0.28571429rem;
+}
+
+/*-------------------
+        Fluid
+--------------------*/
+
+.pq.fluid.buttons,
+.pq.fluid.button {
+  width: 100%;
+}
+.pq.fluid.button {
+  display: block;
+}
+.pq.two.buttons {
+  width: 100%;
+}
+.pq.two.buttons > .button {
+  width: 50%;
+}
+.pq.three.buttons {
+  width: 100%;
+}
+.pq.three.buttons > .button {
+  width: 33.333%;
+}
+.pq.four.buttons {
+  width: 100%;
+}
+.pq.four.buttons > .button {
+  width: 25%;
+}
+.pq.five.buttons {
+  width: 100%;
+}
+.pq.five.buttons > .button {
+  width: 20%;
+}
+.pq.six.buttons {
+  width: 100%;
+}
+.pq.six.buttons > .button {
+  width: 16.666%;
+}
+.pq.seven.buttons {
+  width: 100%;
+}
+.pq.seven.buttons > .button {
+  width: 14.285%;
+}
+.pq.eight.buttons {
+  width: 100%;
+}
+.pq.eight.buttons > .button {
+  width: 12.5%;
+}
+.pq.nine.buttons {
+  width: 100%;
+}
+.pq.nine.buttons > .button {
+  width: 11.11%;
+}
+.pq.ten.buttons {
+  width: 100%;
+}
+.pq.ten.buttons > .button {
+  width: 10%;
+}
+.pq.eleven.buttons {
+  width: 100%;
+}
+.pq.eleven.buttons > .button {
+  width: 9.09%;
+}
+.pq.twelve.buttons {
+  width: 100%;
+}
+.pq.twelve.buttons > .button {
+  width: 8.3333%;
+}
+
+/* Fluid Vertical Buttons */
+.pq.fluid.vertical.buttons,
+.pq.fluid.vertical.buttons > .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+}
+.pq.two.vertical.buttons > .button {
+  height: 50%;
+}
+.pq.three.vertical.buttons > .button {
+  height: 33.333%;
+}
+.pq.four.vertical.buttons > .button {
+  height: 25%;
+}
+.pq.five.vertical.buttons > .button {
+  height: 20%;
+}
+.pq.six.vertical.buttons > .button {
+  height: 16.666%;
+}
+.pq.seven.vertical.buttons > .button {
+  height: 14.285%;
+}
+.pq.eight.vertical.buttons > .button {
+  height: 12.5%;
+}
+.pq.nine.vertical.buttons > .button {
+  height: 11.11%;
+}
+.pq.ten.vertical.buttons > .button {
+  height: 10%;
+}
+.pq.eleven.vertical.buttons > .button {
+  height: 9.09%;
+}
+.pq.twelve.vertical.buttons > .button {
+  height: 8.3333%;
+}
+
+/*-------------------
+       Colors
+--------------------*/
+
+
+/*--- Black ---*/
+
+.pq.black.buttons .button,
+.pq.black.button {
+  background-color: #1B1C1D;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.black.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.black.buttons .button:hover,
+.pq.black.button:hover {
+  background-color: #27292a;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.black.buttons .button:focus,
+.pq.black.button:focus {
+  background-color: #2f3032;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.black.buttons .button:active,
+.pq.black.button:active {
+  background-color: #343637;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.black.buttons .active.button,
+.pq.black.buttons .active.button:active,
+.pq.black.active.button,
+.pq.black.button .active.button:active {
+  background-color: #0f0f10;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.black.buttons .button,
+.pq.basic.black.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #1B1C1D inset !important;
+          box-shadow: 0px 0px 0px 1px #1B1C1D inset !important;
+  color: #1B1C1D !important;
+}
+.pq.basic.black.buttons .button:hover,
+.pq.basic.black.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #27292a inset !important;
+          box-shadow: 0px 0px 0px 1px #27292a inset !important;
+  color: #27292a !important;
+}
+.pq.basic.black.buttons .button:focus,
+.pq.basic.black.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #2f3032 inset !important;
+          box-shadow: 0px 0px 0px 1px #2f3032 inset !important;
+  color: #27292a !important;
+}
+.pq.basic.black.buttons .active.button,
+.pq.basic.black.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #0f0f10 inset !important;
+          box-shadow: 0px 0px 0px 1px #0f0f10 inset !important;
+  color: #343637 !important;
+}
+.pq.basic.black.buttons .button:active,
+.pq.basic.black.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #343637 inset !important;
+          box-shadow: 0px 0px 0px 1px #343637 inset !important;
+  color: #343637 !important;
+}
+.pq.buttons:not(.vertical) > .basic.black.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.black.buttons .button,
+.pq.inverted.black.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #D4D4D5 inset !important;
+          box-shadow: 0px 0px 0px 2px #D4D4D5 inset !important;
+  color: #FFFFFF;
+}
+.pq.inverted.black.buttons .button:hover,
+.pq.inverted.black.button:hover,
+.pq.inverted.black.buttons .button:focus,
+.pq.inverted.black.button:focus,
+.pq.inverted.black.buttons .button.active,
+.pq.inverted.black.button.active,
+.pq.inverted.black.buttons .button:active,
+.pq.inverted.black.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.black.buttons .button:hover,
+.pq.inverted.black.button:hover {
+  background-color: #000000;
+}
+.pq.inverted.black.buttons .button:focus,
+.pq.inverted.black.button:focus {
+  background-color: #000000;
+}
+.pq.inverted.black.buttons .active.button,
+.pq.inverted.black.active.button {
+  background-color: #000000;
+}
+.pq.inverted.black.buttons .button:active,
+.pq.inverted.black.button:active {
+  background-color: #000000;
+}
+
+/* Inverted Basic */
+.pq.inverted.black.basic.buttons .button,
+.pq.inverted.black.buttons .basic.button,
+.pq.inverted.black.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.black.basic.buttons .button:hover,
+.pq.inverted.black.buttons .basic.button:hover,
+.pq.inverted.black.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.black.basic.buttons .button:focus,
+.pq.inverted.black.basic.buttons .button:focus,
+.pq.inverted.black.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #545454 !important;
+}
+.pq.inverted.black.basic.buttons .active.button,
+.pq.inverted.black.buttons .basic.active.button,
+.pq.inverted.black.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.black.basic.buttons .button:active,
+.pq.inverted.black.buttons .basic.button:active,
+.pq.inverted.black.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #000000 inset !important;
+          box-shadow: 0px 0px 0px 2px #000000 inset !important;
+  color: #FFFFFF !important;
+}
+
+/*--- Grey ---*/
+
+.pq.grey.buttons .button,
+.pq.grey.button {
+  background-color: #767676;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.grey.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.grey.buttons .button:hover,
+.pq.grey.button:hover {
+  background-color: #838383;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.grey.buttons .button:focus,
+.pq.grey.button:focus {
+  background-color: #8a8a8a;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.grey.buttons .button:active,
+.pq.grey.button:active {
+  background-color: #909090;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.grey.buttons .active.button,
+.pq.grey.buttons .active.button:active,
+.pq.grey.active.button,
+.pq.grey.button .active.button:active {
+  background-color: #696969;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.grey.buttons .button,
+.pq.basic.grey.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #767676 inset !important;
+          box-shadow: 0px 0px 0px 1px #767676 inset !important;
+  color: #767676 !important;
+}
+.pq.basic.grey.buttons .button:hover,
+.pq.basic.grey.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #838383 inset !important;
+          box-shadow: 0px 0px 0px 1px #838383 inset !important;
+  color: #838383 !important;
+}
+.pq.basic.grey.buttons .button:focus,
+.pq.basic.grey.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #8a8a8a inset !important;
+          box-shadow: 0px 0px 0px 1px #8a8a8a inset !important;
+  color: #838383 !important;
+}
+.pq.basic.grey.buttons .active.button,
+.pq.basic.grey.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #696969 inset !important;
+          box-shadow: 0px 0px 0px 1px #696969 inset !important;
+  color: #909090 !important;
+}
+.pq.basic.grey.buttons .button:active,
+.pq.basic.grey.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #909090 inset !important;
+          box-shadow: 0px 0px 0px 1px #909090 inset !important;
+  color: #909090 !important;
+}
+.pq.buttons:not(.vertical) > .basic.grey.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.grey.buttons .button,
+.pq.inverted.grey.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #D4D4D5 inset !important;
+          box-shadow: 0px 0px 0px 2px #D4D4D5 inset !important;
+  color: #FFFFFF;
+}
+.pq.inverted.grey.buttons .button:hover,
+.pq.inverted.grey.button:hover,
+.pq.inverted.grey.buttons .button:focus,
+.pq.inverted.grey.button:focus,
+.pq.inverted.grey.buttons .button.active,
+.pq.inverted.grey.button.active,
+.pq.inverted.grey.buttons .button:active,
+.pq.inverted.grey.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: rgba(0, 0, 0, 0.6);
+}
+.pq.inverted.grey.buttons .button:hover,
+.pq.inverted.grey.button:hover {
+  background-color: #cfd0d2;
+}
+.pq.inverted.grey.buttons .button:focus,
+.pq.inverted.grey.button:focus {
+  background-color: #c7c9cb;
+}
+.pq.inverted.grey.buttons .active.button,
+.pq.inverted.grey.active.button {
+  background-color: #cfd0d2;
+}
+.pq.inverted.grey.buttons .button:active,
+.pq.inverted.grey.button:active {
+  background-color: #c2c4c5;
+}
+
+/* Inverted Basic */
+.pq.inverted.grey.basic.buttons .button,
+.pq.inverted.grey.buttons .basic.button,
+.pq.inverted.grey.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.grey.basic.buttons .button:hover,
+.pq.inverted.grey.buttons .basic.button:hover,
+.pq.inverted.grey.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #cfd0d2 inset !important;
+          box-shadow: 0px 0px 0px 2px #cfd0d2 inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.grey.basic.buttons .button:focus,
+.pq.inverted.grey.basic.buttons .button:focus,
+.pq.inverted.grey.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #c7c9cb inset !important;
+          box-shadow: 0px 0px 0px 2px #c7c9cb inset !important;
+  color: #DCDDDE !important;
+}
+.pq.inverted.grey.basic.buttons .active.button,
+.pq.inverted.grey.buttons .basic.active.button,
+.pq.inverted.grey.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #cfd0d2 inset !important;
+          box-shadow: 0px 0px 0px 2px #cfd0d2 inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.grey.basic.buttons .button:active,
+.pq.inverted.grey.buttons .basic.button:active,
+.pq.inverted.grey.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #c2c4c5 inset !important;
+          box-shadow: 0px 0px 0px 2px #c2c4c5 inset !important;
+  color: #FFFFFF !important;
+}
+
+/*--- Brown ---*/
+
+.pq.brown.buttons .button,
+.pq.brown.button {
+  background-color: #A5673F;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.brown.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.brown.buttons .button:hover,
+.pq.brown.button:hover {
+  background-color: #975b33;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.brown.buttons .button:focus,
+.pq.brown.button:focus {
+  background-color: #90532b;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.brown.buttons .button:active,
+.pq.brown.button:active {
+  background-color: #805031;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.brown.buttons .active.button,
+.pq.brown.buttons .active.button:active,
+.pq.brown.active.button,
+.pq.brown.button .active.button:active {
+  background-color: #995a31;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.brown.buttons .button,
+.pq.basic.brown.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #A5673F inset !important;
+          box-shadow: 0px 0px 0px 1px #A5673F inset !important;
+  color: #A5673F !important;
+}
+.pq.basic.brown.buttons .button:hover,
+.pq.basic.brown.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #975b33 inset !important;
+          box-shadow: 0px 0px 0px 1px #975b33 inset !important;
+  color: #975b33 !important;
+}
+.pq.basic.brown.buttons .button:focus,
+.pq.basic.brown.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #90532b inset !important;
+          box-shadow: 0px 0px 0px 1px #90532b inset !important;
+  color: #975b33 !important;
+}
+.pq.basic.brown.buttons .active.button,
+.pq.basic.brown.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #995a31 inset !important;
+          box-shadow: 0px 0px 0px 1px #995a31 inset !important;
+  color: #805031 !important;
+}
+.pq.basic.brown.buttons .button:active,
+.pq.basic.brown.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #805031 inset !important;
+          box-shadow: 0px 0px 0px 1px #805031 inset !important;
+  color: #805031 !important;
+}
+.pq.buttons:not(.vertical) > .basic.brown.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.brown.buttons .button,
+.pq.inverted.brown.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #D67C1C inset !important;
+          box-shadow: 0px 0px 0px 2px #D67C1C inset !important;
+  color: #D67C1C;
+}
+.pq.inverted.brown.buttons .button:hover,
+.pq.inverted.brown.button:hover,
+.pq.inverted.brown.buttons .button:focus,
+.pq.inverted.brown.button:focus,
+.pq.inverted.brown.buttons .button.active,
+.pq.inverted.brown.button.active,
+.pq.inverted.brown.buttons .button:active,
+.pq.inverted.brown.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.brown.buttons .button:hover,
+.pq.inverted.brown.button:hover {
+  background-color: #c86f11;
+}
+.pq.inverted.brown.buttons .button:focus,
+.pq.inverted.brown.button:focus {
+  background-color: #c16808;
+}
+.pq.inverted.brown.buttons .active.button,
+.pq.inverted.brown.active.button {
+  background-color: #cc6f0d;
+}
+.pq.inverted.brown.buttons .button:active,
+.pq.inverted.brown.button:active {
+  background-color: #a96216;
+}
+
+/* Inverted Basic */
+.pq.inverted.brown.basic.buttons .button,
+.pq.inverted.brown.buttons .basic.button,
+.pq.inverted.brown.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.brown.basic.buttons .button:hover,
+.pq.inverted.brown.buttons .basic.button:hover,
+.pq.inverted.brown.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #c86f11 inset !important;
+          box-shadow: 0px 0px 0px 2px #c86f11 inset !important;
+  color: #D67C1C !important;
+}
+.pq.inverted.brown.basic.buttons .button:focus,
+.pq.inverted.brown.basic.buttons .button:focus,
+.pq.inverted.brown.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #c16808 inset !important;
+          box-shadow: 0px 0px 0px 2px #c16808 inset !important;
+  color: #D67C1C !important;
+}
+.pq.inverted.brown.basic.buttons .active.button,
+.pq.inverted.brown.buttons .basic.active.button,
+.pq.inverted.brown.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #cc6f0d inset !important;
+          box-shadow: 0px 0px 0px 2px #cc6f0d inset !important;
+  color: #D67C1C !important;
+}
+.pq.inverted.brown.basic.buttons .button:active,
+.pq.inverted.brown.buttons .basic.button:active,
+.pq.inverted.brown.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #a96216 inset !important;
+          box-shadow: 0px 0px 0px 2px #a96216 inset !important;
+  color: #D67C1C !important;
+}
+
+/*--- Blue ---*/
+
+.pq.blue.buttons .button,
+.pq.blue.button {
+  background-color: #2185D0;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.blue.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.blue.buttons .button:hover,
+.pq.blue.button:hover {
+  background-color: #1678c2;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.blue.buttons .button:focus,
+.pq.blue.button:focus {
+  background-color: #0d71bb;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.blue.buttons .button:active,
+.pq.blue.button:active {
+  background-color: #1a69a4;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.blue.buttons .active.button,
+.pq.blue.buttons .active.button:active,
+.pq.blue.active.button,
+.pq.blue.button .active.button:active {
+  background-color: #1279c6;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.blue.buttons .button,
+.pq.basic.blue.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #2185D0 inset !important;
+          box-shadow: 0px 0px 0px 1px #2185D0 inset !important;
+  color: #2185D0 !important;
+}
+.pq.basic.blue.buttons .button:hover,
+.pq.basic.blue.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #1678c2 inset !important;
+          box-shadow: 0px 0px 0px 1px #1678c2 inset !important;
+  color: #1678c2 !important;
+}
+.pq.basic.blue.buttons .button:focus,
+.pq.basic.blue.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #0d71bb inset !important;
+          box-shadow: 0px 0px 0px 1px #0d71bb inset !important;
+  color: #1678c2 !important;
+}
+.pq.basic.blue.buttons .active.button,
+.pq.basic.blue.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #1279c6 inset !important;
+          box-shadow: 0px 0px 0px 1px #1279c6 inset !important;
+  color: #1a69a4 !important;
+}
+.pq.basic.blue.buttons .button:active,
+.pq.basic.blue.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #1a69a4 inset !important;
+          box-shadow: 0px 0px 0px 1px #1a69a4 inset !important;
+  color: #1a69a4 !important;
+}
+.pq.buttons:not(.vertical) > .basic.blue.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.blue.buttons .button,
+.pq.inverted.blue.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #54C8FF inset !important;
+          box-shadow: 0px 0px 0px 2px #54C8FF inset !important;
+  color: #54C8FF;
+}
+.pq.inverted.blue.buttons .button:hover,
+.pq.inverted.blue.button:hover,
+.pq.inverted.blue.buttons .button:focus,
+.pq.inverted.blue.button:focus,
+.pq.inverted.blue.buttons .button.active,
+.pq.inverted.blue.button.active,
+.pq.inverted.blue.buttons .button:active,
+.pq.inverted.blue.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.blue.buttons .button:hover,
+.pq.inverted.blue.button:hover {
+  background-color: #3ac0ff;
+}
+.pq.inverted.blue.buttons .button:focus,
+.pq.inverted.blue.button:focus {
+  background-color: #2bbbff;
+}
+.pq.inverted.blue.buttons .active.button,
+.pq.inverted.blue.active.button {
+  background-color: #3ac0ff;
+}
+.pq.inverted.blue.buttons .button:active,
+.pq.inverted.blue.button:active {
+  background-color: #21b8ff;
+}
+
+/* Inverted Basic */
+.pq.inverted.blue.basic.buttons .button,
+.pq.inverted.blue.buttons .basic.button,
+.pq.inverted.blue.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.blue.basic.buttons .button:hover,
+.pq.inverted.blue.buttons .basic.button:hover,
+.pq.inverted.blue.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #3ac0ff inset !important;
+          box-shadow: 0px 0px 0px 2px #3ac0ff inset !important;
+  color: #54C8FF !important;
+}
+.pq.inverted.blue.basic.buttons .button:focus,
+.pq.inverted.blue.basic.buttons .button:focus,
+.pq.inverted.blue.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #2bbbff inset !important;
+          box-shadow: 0px 0px 0px 2px #2bbbff inset !important;
+  color: #54C8FF !important;
+}
+.pq.inverted.blue.basic.buttons .active.button,
+.pq.inverted.blue.buttons .basic.active.button,
+.pq.inverted.blue.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #3ac0ff inset !important;
+          box-shadow: 0px 0px 0px 2px #3ac0ff inset !important;
+  color: #54C8FF !important;
+}
+.pq.inverted.blue.basic.buttons .button:active,
+.pq.inverted.blue.buttons .basic.button:active,
+.pq.inverted.blue.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #21b8ff inset !important;
+          box-shadow: 0px 0px 0px 2px #21b8ff inset !important;
+  color: #54C8FF !important;
+}
+
+/*--- Green ---*/
+
+.pq.green.buttons .button,
+.pq.green.button {
+  background-color: #21BA45;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.green.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.green.buttons .button:hover,
+.pq.green.button:hover {
+  background-color: #16ab39;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.green.buttons .button:focus,
+.pq.green.button:focus {
+  background-color: #0ea432;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.green.buttons .button:active,
+.pq.green.button:active {
+  background-color: #198f35;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.green.buttons .active.button,
+.pq.green.buttons .active.button:active,
+.pq.green.active.button,
+.pq.green.button .active.button:active {
+  background-color: #13ae38;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.green.buttons .button,
+.pq.basic.green.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #21BA45 inset !important;
+          box-shadow: 0px 0px 0px 1px #21BA45 inset !important;
+  color: #21BA45 !important;
+}
+.pq.basic.green.buttons .button:hover,
+.pq.basic.green.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #16ab39 inset !important;
+          box-shadow: 0px 0px 0px 1px #16ab39 inset !important;
+  color: #16ab39 !important;
+}
+.pq.basic.green.buttons .button:focus,
+.pq.basic.green.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #0ea432 inset !important;
+          box-shadow: 0px 0px 0px 1px #0ea432 inset !important;
+  color: #16ab39 !important;
+}
+.pq.basic.green.buttons .active.button,
+.pq.basic.green.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #13ae38 inset !important;
+          box-shadow: 0px 0px 0px 1px #13ae38 inset !important;
+  color: #198f35 !important;
+}
+.pq.basic.green.buttons .button:active,
+.pq.basic.green.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #198f35 inset !important;
+          box-shadow: 0px 0px 0px 1px #198f35 inset !important;
+  color: #198f35 !important;
+}
+.pq.buttons:not(.vertical) > .basic.green.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.green.buttons .button,
+.pq.inverted.green.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #2ECC40 inset !important;
+          box-shadow: 0px 0px 0px 2px #2ECC40 inset !important;
+  color: #2ECC40;
+}
+.pq.inverted.green.buttons .button:hover,
+.pq.inverted.green.button:hover,
+.pq.inverted.green.buttons .button:focus,
+.pq.inverted.green.button:focus,
+.pq.inverted.green.buttons .button.active,
+.pq.inverted.green.button.active,
+.pq.inverted.green.buttons .button:active,
+.pq.inverted.green.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.green.buttons .button:hover,
+.pq.inverted.green.button:hover {
+  background-color: #22be34;
+}
+.pq.inverted.green.buttons .button:focus,
+.pq.inverted.green.button:focus {
+  background-color: #19b82b;
+}
+.pq.inverted.green.buttons .active.button,
+.pq.inverted.green.active.button {
+  background-color: #1fc231;
+}
+.pq.inverted.green.buttons .button:active,
+.pq.inverted.green.button:active {
+  background-color: #25a233;
+}
+
+/* Inverted Basic */
+.pq.inverted.green.basic.buttons .button,
+.pq.inverted.green.buttons .basic.button,
+.pq.inverted.green.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.green.basic.buttons .button:hover,
+.pq.inverted.green.buttons .basic.button:hover,
+.pq.inverted.green.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #22be34 inset !important;
+          box-shadow: 0px 0px 0px 2px #22be34 inset !important;
+  color: #2ECC40 !important;
+}
+.pq.inverted.green.basic.buttons .button:focus,
+.pq.inverted.green.basic.buttons .button:focus,
+.pq.inverted.green.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #19b82b inset !important;
+          box-shadow: 0px 0px 0px 2px #19b82b inset !important;
+  color: #2ECC40 !important;
+}
+.pq.inverted.green.basic.buttons .active.button,
+.pq.inverted.green.buttons .basic.active.button,
+.pq.inverted.green.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #1fc231 inset !important;
+          box-shadow: 0px 0px 0px 2px #1fc231 inset !important;
+  color: #2ECC40 !important;
+}
+.pq.inverted.green.basic.buttons .button:active,
+.pq.inverted.green.buttons .basic.button:active,
+.pq.inverted.green.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #25a233 inset !important;
+          box-shadow: 0px 0px 0px 2px #25a233 inset !important;
+  color: #2ECC40 !important;
+}
+
+/*--- Orange ---*/
+
+.pq.orange.buttons .button,
+.pq.orange.button {
+  background-color: #F2711C;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.orange.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.orange.buttons .button:hover,
+.pq.orange.button:hover {
+  background-color: #f26202;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.orange.buttons .button:focus,
+.pq.orange.button:focus {
+  background-color: #e55b00;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.orange.buttons .button:active,
+.pq.orange.button:active {
+  background-color: #cf590c;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.orange.buttons .active.button,
+.pq.orange.buttons .active.button:active,
+.pq.orange.active.button,
+.pq.orange.button .active.button:active {
+  background-color: #f56100;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.orange.buttons .button,
+.pq.basic.orange.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #F2711C inset !important;
+          box-shadow: 0px 0px 0px 1px #F2711C inset !important;
+  color: #F2711C !important;
+}
+.pq.basic.orange.buttons .button:hover,
+.pq.basic.orange.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #f26202 inset !important;
+          box-shadow: 0px 0px 0px 1px #f26202 inset !important;
+  color: #f26202 !important;
+}
+.pq.basic.orange.buttons .button:focus,
+.pq.basic.orange.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #e55b00 inset !important;
+          box-shadow: 0px 0px 0px 1px #e55b00 inset !important;
+  color: #f26202 !important;
+}
+.pq.basic.orange.buttons .active.button,
+.pq.basic.orange.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #f56100 inset !important;
+          box-shadow: 0px 0px 0px 1px #f56100 inset !important;
+  color: #cf590c !important;
+}
+.pq.basic.orange.buttons .button:active,
+.pq.basic.orange.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #cf590c inset !important;
+          box-shadow: 0px 0px 0px 1px #cf590c inset !important;
+  color: #cf590c !important;
+}
+.pq.buttons:not(.vertical) > .basic.orange.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.orange.buttons .button,
+.pq.inverted.orange.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #FF851B inset !important;
+          box-shadow: 0px 0px 0px 2px #FF851B inset !important;
+  color: #FF851B;
+}
+.pq.inverted.orange.buttons .button:hover,
+.pq.inverted.orange.button:hover,
+.pq.inverted.orange.buttons .button:focus,
+.pq.inverted.orange.button:focus,
+.pq.inverted.orange.buttons .button.active,
+.pq.inverted.orange.button.active,
+.pq.inverted.orange.buttons .button:active,
+.pq.inverted.orange.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.orange.buttons .button:hover,
+.pq.inverted.orange.button:hover {
+  background-color: #ff7701;
+}
+.pq.inverted.orange.buttons .button:focus,
+.pq.inverted.orange.button:focus {
+  background-color: #f17000;
+}
+.pq.inverted.orange.buttons .active.button,
+.pq.inverted.orange.active.button {
+  background-color: #ff7701;
+}
+.pq.inverted.orange.buttons .button:active,
+.pq.inverted.orange.button:active {
+  background-color: #e76b00;
+}
+
+/* Inverted Basic */
+.pq.inverted.orange.basic.buttons .button,
+.pq.inverted.orange.buttons .basic.button,
+.pq.inverted.orange.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.orange.basic.buttons .button:hover,
+.pq.inverted.orange.buttons .basic.button:hover,
+.pq.inverted.orange.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #ff7701 inset !important;
+          box-shadow: 0px 0px 0px 2px #ff7701 inset !important;
+  color: #FF851B !important;
+}
+.pq.inverted.orange.basic.buttons .button:focus,
+.pq.inverted.orange.basic.buttons .button:focus,
+.pq.inverted.orange.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #f17000 inset !important;
+          box-shadow: 0px 0px 0px 2px #f17000 inset !important;
+  color: #FF851B !important;
+}
+.pq.inverted.orange.basic.buttons .active.button,
+.pq.inverted.orange.buttons .basic.active.button,
+.pq.inverted.orange.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #ff7701 inset !important;
+          box-shadow: 0px 0px 0px 2px #ff7701 inset !important;
+  color: #FF851B !important;
+}
+.pq.inverted.orange.basic.buttons .button:active,
+.pq.inverted.orange.buttons .basic.button:active,
+.pq.inverted.orange.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #e76b00 inset !important;
+          box-shadow: 0px 0px 0px 2px #e76b00 inset !important;
+  color: #FF851B !important;
+}
+
+/*--- Pink ---*/
+
+.pq.pink.buttons .button,
+.pq.pink.button {
+  background-color: #E03997;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.pink.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.pink.buttons .button:hover,
+.pq.pink.button:hover {
+  background-color: #e61a8d;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.pink.buttons .button:focus,
+.pq.pink.button:focus {
+  background-color: #e10f85;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.pink.buttons .button:active,
+.pq.pink.button:active {
+  background-color: #c71f7e;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.pink.buttons .active.button,
+.pq.pink.buttons .active.button:active,
+.pq.pink.active.button,
+.pq.pink.button .active.button:active {
+  background-color: #ea158d;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.pink.buttons .button,
+.pq.basic.pink.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #E03997 inset !important;
+          box-shadow: 0px 0px 0px 1px #E03997 inset !important;
+  color: #E03997 !important;
+}
+.pq.basic.pink.buttons .button:hover,
+.pq.basic.pink.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #e61a8d inset !important;
+          box-shadow: 0px 0px 0px 1px #e61a8d inset !important;
+  color: #e61a8d !important;
+}
+.pq.basic.pink.buttons .button:focus,
+.pq.basic.pink.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #e10f85 inset !important;
+          box-shadow: 0px 0px 0px 1px #e10f85 inset !important;
+  color: #e61a8d !important;
+}
+.pq.basic.pink.buttons .active.button,
+.pq.basic.pink.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #ea158d inset !important;
+          box-shadow: 0px 0px 0px 1px #ea158d inset !important;
+  color: #c71f7e !important;
+}
+.pq.basic.pink.buttons .button:active,
+.pq.basic.pink.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #c71f7e inset !important;
+          box-shadow: 0px 0px 0px 1px #c71f7e inset !important;
+  color: #c71f7e !important;
+}
+.pq.buttons:not(.vertical) > .basic.pink.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.pink.buttons .button,
+.pq.inverted.pink.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #FF8EDF inset !important;
+          box-shadow: 0px 0px 0px 2px #FF8EDF inset !important;
+  color: #FF8EDF;
+}
+.pq.inverted.pink.buttons .button:hover,
+.pq.inverted.pink.button:hover,
+.pq.inverted.pink.buttons .button:focus,
+.pq.inverted.pink.button:focus,
+.pq.inverted.pink.buttons .button.active,
+.pq.inverted.pink.button.active,
+.pq.inverted.pink.buttons .button:active,
+.pq.inverted.pink.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.pink.buttons .button:hover,
+.pq.inverted.pink.button:hover {
+  background-color: #ff74d8;
+}
+.pq.inverted.pink.buttons .button:focus,
+.pq.inverted.pink.button:focus {
+  background-color: #ff65d3;
+}
+.pq.inverted.pink.buttons .active.button,
+.pq.inverted.pink.active.button {
+  background-color: #ff74d8;
+}
+.pq.inverted.pink.buttons .button:active,
+.pq.inverted.pink.button:active {
+  background-color: #ff5bd1;
+}
+
+/* Inverted Basic */
+.pq.inverted.pink.basic.buttons .button,
+.pq.inverted.pink.buttons .basic.button,
+.pq.inverted.pink.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.pink.basic.buttons .button:hover,
+.pq.inverted.pink.buttons .basic.button:hover,
+.pq.inverted.pink.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #ff74d8 inset !important;
+          box-shadow: 0px 0px 0px 2px #ff74d8 inset !important;
+  color: #FF8EDF !important;
+}
+.pq.inverted.pink.basic.buttons .button:focus,
+.pq.inverted.pink.basic.buttons .button:focus,
+.pq.inverted.pink.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #ff65d3 inset !important;
+          box-shadow: 0px 0px 0px 2px #ff65d3 inset !important;
+  color: #FF8EDF !important;
+}
+.pq.inverted.pink.basic.buttons .active.button,
+.pq.inverted.pink.buttons .basic.active.button,
+.pq.inverted.pink.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #ff74d8 inset !important;
+          box-shadow: 0px 0px 0px 2px #ff74d8 inset !important;
+  color: #FF8EDF !important;
+}
+.pq.inverted.pink.basic.buttons .button:active,
+.pq.inverted.pink.buttons .basic.button:active,
+.pq.inverted.pink.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #ff5bd1 inset !important;
+          box-shadow: 0px 0px 0px 2px #ff5bd1 inset !important;
+  color: #FF8EDF !important;
+}
+
+/*--- Violet ---*/
+
+.pq.violet.buttons .button,
+.pq.violet.button {
+  background-color: #6435C9;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.violet.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.violet.buttons .button:hover,
+.pq.violet.button:hover {
+  background-color: #5829bb;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.violet.buttons .button:focus,
+.pq.violet.button:focus {
+  background-color: #4f20b5;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.violet.buttons .button:active,
+.pq.violet.button:active {
+  background-color: #502aa1;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.violet.buttons .active.button,
+.pq.violet.buttons .active.button:active,
+.pq.violet.active.button,
+.pq.violet.button .active.button:active {
+  background-color: #5626bf;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.violet.buttons .button,
+.pq.basic.violet.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #6435C9 inset !important;
+          box-shadow: 0px 0px 0px 1px #6435C9 inset !important;
+  color: #6435C9 !important;
+}
+.pq.basic.violet.buttons .button:hover,
+.pq.basic.violet.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #5829bb inset !important;
+          box-shadow: 0px 0px 0px 1px #5829bb inset !important;
+  color: #5829bb !important;
+}
+.pq.basic.violet.buttons .button:focus,
+.pq.basic.violet.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #4f20b5 inset !important;
+          box-shadow: 0px 0px 0px 1px #4f20b5 inset !important;
+  color: #5829bb !important;
+}
+.pq.basic.violet.buttons .active.button,
+.pq.basic.violet.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #5626bf inset !important;
+          box-shadow: 0px 0px 0px 1px #5626bf inset !important;
+  color: #502aa1 !important;
+}
+.pq.basic.violet.buttons .button:active,
+.pq.basic.violet.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #502aa1 inset !important;
+          box-shadow: 0px 0px 0px 1px #502aa1 inset !important;
+  color: #502aa1 !important;
+}
+.pq.buttons:not(.vertical) > .basic.violet.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.violet.buttons .button,
+.pq.inverted.violet.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #A291FB inset !important;
+          box-shadow: 0px 0px 0px 2px #A291FB inset !important;
+  color: #A291FB;
+}
+.pq.inverted.violet.buttons .button:hover,
+.pq.inverted.violet.button:hover,
+.pq.inverted.violet.buttons .button:focus,
+.pq.inverted.violet.button:focus,
+.pq.inverted.violet.buttons .button.active,
+.pq.inverted.violet.button.active,
+.pq.inverted.violet.buttons .button:active,
+.pq.inverted.violet.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.violet.buttons .button:hover,
+.pq.inverted.violet.button:hover {
+  background-color: #8a73ff;
+}
+.pq.inverted.violet.buttons .button:focus,
+.pq.inverted.violet.button:focus {
+  background-color: #7d64ff;
+}
+.pq.inverted.violet.buttons .active.button,
+.pq.inverted.violet.active.button {
+  background-color: #8a73ff;
+}
+.pq.inverted.violet.buttons .button:active,
+.pq.inverted.violet.button:active {
+  background-color: #7860f9;
+}
+
+/* Inverted Basic */
+.pq.inverted.violet.basic.buttons .button,
+.pq.inverted.violet.buttons .basic.button,
+.pq.inverted.violet.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.violet.basic.buttons .button:hover,
+.pq.inverted.violet.buttons .basic.button:hover,
+.pq.inverted.violet.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #8a73ff inset !important;
+          box-shadow: 0px 0px 0px 2px #8a73ff inset !important;
+  color: #A291FB !important;
+}
+.pq.inverted.violet.basic.buttons .button:focus,
+.pq.inverted.violet.basic.buttons .button:focus,
+.pq.inverted.violet.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #7d64ff inset !important;
+          box-shadow: 0px 0px 0px 2px #7d64ff inset !important;
+  color: #A291FB !important;
+}
+.pq.inverted.violet.basic.buttons .active.button,
+.pq.inverted.violet.buttons .basic.active.button,
+.pq.inverted.violet.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #8a73ff inset !important;
+          box-shadow: 0px 0px 0px 2px #8a73ff inset !important;
+  color: #A291FB !important;
+}
+.pq.inverted.violet.basic.buttons .button:active,
+.pq.inverted.violet.buttons .basic.button:active,
+.pq.inverted.violet.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #7860f9 inset !important;
+          box-shadow: 0px 0px 0px 2px #7860f9 inset !important;
+  color: #A291FB !important;
+}
+
+/*--- Purple ---*/
+
+.pq.purple.buttons .button,
+.pq.purple.button {
+  background-color: #A333C8;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.purple.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.purple.buttons .button:hover,
+.pq.purple.button:hover {
+  background-color: #9627ba;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.purple.buttons .button:focus,
+.pq.purple.button:focus {
+  background-color: #8f1eb4;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.purple.buttons .button:active,
+.pq.purple.button:active {
+  background-color: #82299f;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.purple.buttons .active.button,
+.pq.purple.buttons .active.button:active,
+.pq.purple.active.button,
+.pq.purple.button .active.button:active {
+  background-color: #9724be;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.purple.buttons .button,
+.pq.basic.purple.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #A333C8 inset !important;
+          box-shadow: 0px 0px 0px 1px #A333C8 inset !important;
+  color: #A333C8 !important;
+}
+.pq.basic.purple.buttons .button:hover,
+.pq.basic.purple.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #9627ba inset !important;
+          box-shadow: 0px 0px 0px 1px #9627ba inset !important;
+  color: #9627ba !important;
+}
+.pq.basic.purple.buttons .button:focus,
+.pq.basic.purple.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #8f1eb4 inset !important;
+          box-shadow: 0px 0px 0px 1px #8f1eb4 inset !important;
+  color: #9627ba !important;
+}
+.pq.basic.purple.buttons .active.button,
+.pq.basic.purple.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #9724be inset !important;
+          box-shadow: 0px 0px 0px 1px #9724be inset !important;
+  color: #82299f !important;
+}
+.pq.basic.purple.buttons .button:active,
+.pq.basic.purple.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #82299f inset !important;
+          box-shadow: 0px 0px 0px 1px #82299f inset !important;
+  color: #82299f !important;
+}
+.pq.buttons:not(.vertical) > .basic.purple.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.purple.buttons .button,
+.pq.inverted.purple.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #DC73FF inset !important;
+          box-shadow: 0px 0px 0px 2px #DC73FF inset !important;
+  color: #DC73FF;
+}
+.pq.inverted.purple.buttons .button:hover,
+.pq.inverted.purple.button:hover,
+.pq.inverted.purple.buttons .button:focus,
+.pq.inverted.purple.button:focus,
+.pq.inverted.purple.buttons .button.active,
+.pq.inverted.purple.button.active,
+.pq.inverted.purple.buttons .button:active,
+.pq.inverted.purple.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.purple.buttons .button:hover,
+.pq.inverted.purple.button:hover {
+  background-color: #d65aff;
+}
+.pq.inverted.purple.buttons .button:focus,
+.pq.inverted.purple.button:focus {
+  background-color: #d24aff;
+}
+.pq.inverted.purple.buttons .active.button,
+.pq.inverted.purple.active.button {
+  background-color: #d65aff;
+}
+.pq.inverted.purple.buttons .button:active,
+.pq.inverted.purple.button:active {
+  background-color: #cf40ff;
+}
+
+/* Inverted Basic */
+.pq.inverted.purple.basic.buttons .button,
+.pq.inverted.purple.buttons .basic.button,
+.pq.inverted.purple.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.purple.basic.buttons .button:hover,
+.pq.inverted.purple.buttons .basic.button:hover,
+.pq.inverted.purple.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #d65aff inset !important;
+          box-shadow: 0px 0px 0px 2px #d65aff inset !important;
+  color: #DC73FF !important;
+}
+.pq.inverted.purple.basic.buttons .button:focus,
+.pq.inverted.purple.basic.buttons .button:focus,
+.pq.inverted.purple.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #d24aff inset !important;
+          box-shadow: 0px 0px 0px 2px #d24aff inset !important;
+  color: #DC73FF !important;
+}
+.pq.inverted.purple.basic.buttons .active.button,
+.pq.inverted.purple.buttons .basic.active.button,
+.pq.inverted.purple.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #d65aff inset !important;
+          box-shadow: 0px 0px 0px 2px #d65aff inset !important;
+  color: #DC73FF !important;
+}
+.pq.inverted.purple.basic.buttons .button:active,
+.pq.inverted.purple.buttons .basic.button:active,
+.pq.inverted.purple.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #cf40ff inset !important;
+          box-shadow: 0px 0px 0px 2px #cf40ff inset !important;
+  color: #DC73FF !important;
+}
+
+/*--- Red ---*/
+
+.pq.red.buttons .button,
+.pq.red.button {
+  background-color: #DB2828;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.red.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.red.buttons .button:hover,
+.pq.red.button:hover {
+  background-color: #d01919;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.red.buttons .button:focus,
+.pq.red.button:focus {
+  background-color: #ca1010;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.red.buttons .button:active,
+.pq.red.button:active {
+  background-color: #b21e1e;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.red.buttons .active.button,
+.pq.red.buttons .active.button:active,
+.pq.red.active.button,
+.pq.red.button .active.button:active {
+  background-color: #d41515;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.red.buttons .button,
+.pq.basic.red.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #DB2828 inset !important;
+          box-shadow: 0px 0px 0px 1px #DB2828 inset !important;
+  color: #DB2828 !important;
+}
+.pq.basic.red.buttons .button:hover,
+.pq.basic.red.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #d01919 inset !important;
+          box-shadow: 0px 0px 0px 1px #d01919 inset !important;
+  color: #d01919 !important;
+}
+.pq.basic.red.buttons .button:focus,
+.pq.basic.red.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #ca1010 inset !important;
+          box-shadow: 0px 0px 0px 1px #ca1010 inset !important;
+  color: #d01919 !important;
+}
+.pq.basic.red.buttons .active.button,
+.pq.basic.red.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #d41515 inset !important;
+          box-shadow: 0px 0px 0px 1px #d41515 inset !important;
+  color: #b21e1e !important;
+}
+.pq.basic.red.buttons .button:active,
+.pq.basic.red.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #b21e1e inset !important;
+          box-shadow: 0px 0px 0px 1px #b21e1e inset !important;
+  color: #b21e1e !important;
+}
+.pq.buttons:not(.vertical) > .basic.red.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.red.buttons .button,
+.pq.inverted.red.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #FF695E inset !important;
+          box-shadow: 0px 0px 0px 2px #FF695E inset !important;
+  color: #FF695E;
+}
+.pq.inverted.red.buttons .button:hover,
+.pq.inverted.red.button:hover,
+.pq.inverted.red.buttons .button:focus,
+.pq.inverted.red.button:focus,
+.pq.inverted.red.buttons .button.active,
+.pq.inverted.red.button.active,
+.pq.inverted.red.buttons .button:active,
+.pq.inverted.red.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.red.buttons .button:hover,
+.pq.inverted.red.button:hover {
+  background-color: #ff5144;
+}
+.pq.inverted.red.buttons .button:focus,
+.pq.inverted.red.button:focus {
+  background-color: #ff4335;
+}
+.pq.inverted.red.buttons .active.button,
+.pq.inverted.red.active.button {
+  background-color: #ff5144;
+}
+.pq.inverted.red.buttons .button:active,
+.pq.inverted.red.button:active {
+  background-color: #ff392b;
+}
+
+/* Inverted Basic */
+.pq.inverted.red.basic.buttons .button,
+.pq.inverted.red.buttons .basic.button,
+.pq.inverted.red.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.red.basic.buttons .button:hover,
+.pq.inverted.red.buttons .basic.button:hover,
+.pq.inverted.red.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #ff5144 inset !important;
+          box-shadow: 0px 0px 0px 2px #ff5144 inset !important;
+  color: #FF695E !important;
+}
+.pq.inverted.red.basic.buttons .button:focus,
+.pq.inverted.red.basic.buttons .button:focus,
+.pq.inverted.red.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #ff4335 inset !important;
+          box-shadow: 0px 0px 0px 2px #ff4335 inset !important;
+  color: #FF695E !important;
+}
+.pq.inverted.red.basic.buttons .active.button,
+.pq.inverted.red.buttons .basic.active.button,
+.pq.inverted.red.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #ff5144 inset !important;
+          box-shadow: 0px 0px 0px 2px #ff5144 inset !important;
+  color: #FF695E !important;
+}
+.pq.inverted.red.basic.buttons .button:active,
+.pq.inverted.red.buttons .basic.button:active,
+.pq.inverted.red.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #ff392b inset !important;
+          box-shadow: 0px 0px 0px 2px #ff392b inset !important;
+  color: #FF695E !important;
+}
+
+/*--- Teal ---*/
+
+.pq.teal.buttons .button,
+.pq.teal.button {
+  background-color: #00B5AD;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.teal.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.teal.buttons .button:hover,
+.pq.teal.button:hover {
+  background-color: #009c95;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.teal.buttons .button:focus,
+.pq.teal.button:focus {
+  background-color: #008c86;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.teal.buttons .button:active,
+.pq.teal.button:active {
+  background-color: #00827c;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.teal.buttons .active.button,
+.pq.teal.buttons .active.button:active,
+.pq.teal.active.button,
+.pq.teal.button .active.button:active {
+  background-color: #009c95;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.teal.buttons .button,
+.pq.basic.teal.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #00B5AD inset !important;
+          box-shadow: 0px 0px 0px 1px #00B5AD inset !important;
+  color: #00B5AD !important;
+}
+.pq.basic.teal.buttons .button:hover,
+.pq.basic.teal.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #009c95 inset !important;
+          box-shadow: 0px 0px 0px 1px #009c95 inset !important;
+  color: #009c95 !important;
+}
+.pq.basic.teal.buttons .button:focus,
+.pq.basic.teal.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #008c86 inset !important;
+          box-shadow: 0px 0px 0px 1px #008c86 inset !important;
+  color: #009c95 !important;
+}
+.pq.basic.teal.buttons .active.button,
+.pq.basic.teal.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #009c95 inset !important;
+          box-shadow: 0px 0px 0px 1px #009c95 inset !important;
+  color: #00827c !important;
+}
+.pq.basic.teal.buttons .button:active,
+.pq.basic.teal.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #00827c inset !important;
+          box-shadow: 0px 0px 0px 1px #00827c inset !important;
+  color: #00827c !important;
+}
+.pq.buttons:not(.vertical) > .basic.teal.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.teal.buttons .button,
+.pq.inverted.teal.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #6DFFFF inset !important;
+          box-shadow: 0px 0px 0px 2px #6DFFFF inset !important;
+  color: #6DFFFF;
+}
+.pq.inverted.teal.buttons .button:hover,
+.pq.inverted.teal.button:hover,
+.pq.inverted.teal.buttons .button:focus,
+.pq.inverted.teal.button:focus,
+.pq.inverted.teal.buttons .button.active,
+.pq.inverted.teal.button.active,
+.pq.inverted.teal.buttons .button:active,
+.pq.inverted.teal.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: rgba(0, 0, 0, 0.6);
+}
+.pq.inverted.teal.buttons .button:hover,
+.pq.inverted.teal.button:hover {
+  background-color: #54ffff;
+}
+.pq.inverted.teal.buttons .button:focus,
+.pq.inverted.teal.button:focus {
+  background-color: #44ffff;
+}
+.pq.inverted.teal.buttons .active.button,
+.pq.inverted.teal.active.button {
+  background-color: #54ffff;
+}
+.pq.inverted.teal.buttons .button:active,
+.pq.inverted.teal.button:active {
+  background-color: #3affff;
+}
+
+/* Inverted Basic */
+.pq.inverted.teal.basic.buttons .button,
+.pq.inverted.teal.buttons .basic.button,
+.pq.inverted.teal.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.teal.basic.buttons .button:hover,
+.pq.inverted.teal.buttons .basic.button:hover,
+.pq.inverted.teal.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #54ffff inset !important;
+          box-shadow: 0px 0px 0px 2px #54ffff inset !important;
+  color: #6DFFFF !important;
+}
+.pq.inverted.teal.basic.buttons .button:focus,
+.pq.inverted.teal.basic.buttons .button:focus,
+.pq.inverted.teal.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #44ffff inset !important;
+          box-shadow: 0px 0px 0px 2px #44ffff inset !important;
+  color: #6DFFFF !important;
+}
+.pq.inverted.teal.basic.buttons .active.button,
+.pq.inverted.teal.buttons .basic.active.button,
+.pq.inverted.teal.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #54ffff inset !important;
+          box-shadow: 0px 0px 0px 2px #54ffff inset !important;
+  color: #6DFFFF !important;
+}
+.pq.inverted.teal.basic.buttons .button:active,
+.pq.inverted.teal.buttons .basic.button:active,
+.pq.inverted.teal.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #3affff inset !important;
+          box-shadow: 0px 0px 0px 2px #3affff inset !important;
+  color: #6DFFFF !important;
+}
+
+/*--- Olive ---*/
+
+.pq.olive.buttons .button,
+.pq.olive.button {
+  background-color: #B5CC18;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.olive.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.olive.buttons .button:hover,
+.pq.olive.button:hover {
+  background-color: #a7bd0d;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.olive.buttons .button:focus,
+.pq.olive.button:focus {
+  background-color: #a0b605;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.olive.buttons .button:active,
+.pq.olive.button:active {
+  background-color: #8d9e13;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.olive.buttons .active.button,
+.pq.olive.buttons .active.button:active,
+.pq.olive.active.button,
+.pq.olive.button .active.button:active {
+  background-color: #aac109;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.olive.buttons .button,
+.pq.basic.olive.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #B5CC18 inset !important;
+          box-shadow: 0px 0px 0px 1px #B5CC18 inset !important;
+  color: #B5CC18 !important;
+}
+.pq.basic.olive.buttons .button:hover,
+.pq.basic.olive.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #a7bd0d inset !important;
+          box-shadow: 0px 0px 0px 1px #a7bd0d inset !important;
+  color: #a7bd0d !important;
+}
+.pq.basic.olive.buttons .button:focus,
+.pq.basic.olive.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #a0b605 inset !important;
+          box-shadow: 0px 0px 0px 1px #a0b605 inset !important;
+  color: #a7bd0d !important;
+}
+.pq.basic.olive.buttons .active.button,
+.pq.basic.olive.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #aac109 inset !important;
+          box-shadow: 0px 0px 0px 1px #aac109 inset !important;
+  color: #8d9e13 !important;
+}
+.pq.basic.olive.buttons .button:active,
+.pq.basic.olive.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #8d9e13 inset !important;
+          box-shadow: 0px 0px 0px 1px #8d9e13 inset !important;
+  color: #8d9e13 !important;
+}
+.pq.buttons:not(.vertical) > .basic.olive.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.olive.buttons .button,
+.pq.inverted.olive.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #D9E778 inset !important;
+          box-shadow: 0px 0px 0px 2px #D9E778 inset !important;
+  color: #D9E778;
+}
+.pq.inverted.olive.buttons .button:hover,
+.pq.inverted.olive.button:hover,
+.pq.inverted.olive.buttons .button:focus,
+.pq.inverted.olive.button:focus,
+.pq.inverted.olive.buttons .button.active,
+.pq.inverted.olive.button.active,
+.pq.inverted.olive.buttons .button:active,
+.pq.inverted.olive.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: rgba(0, 0, 0, 0.6);
+}
+.pq.inverted.olive.buttons .button:hover,
+.pq.inverted.olive.button:hover {
+  background-color: #d8ea5c;
+}
+.pq.inverted.olive.buttons .button:focus,
+.pq.inverted.olive.button:focus {
+  background-color: #daef47;
+}
+.pq.inverted.olive.buttons .active.button,
+.pq.inverted.olive.active.button {
+  background-color: #daed59;
+}
+.pq.inverted.olive.buttons .button:active,
+.pq.inverted.olive.button:active {
+  background-color: #cddf4d;
+}
+
+/* Inverted Basic */
+.pq.inverted.olive.basic.buttons .button,
+.pq.inverted.olive.buttons .basic.button,
+.pq.inverted.olive.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.olive.basic.buttons .button:hover,
+.pq.inverted.olive.buttons .basic.button:hover,
+.pq.inverted.olive.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #d8ea5c inset !important;
+          box-shadow: 0px 0px 0px 2px #d8ea5c inset !important;
+  color: #D9E778 !important;
+}
+.pq.inverted.olive.basic.buttons .button:focus,
+.pq.inverted.olive.basic.buttons .button:focus,
+.pq.inverted.olive.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #daef47 inset !important;
+          box-shadow: 0px 0px 0px 2px #daef47 inset !important;
+  color: #D9E778 !important;
+}
+.pq.inverted.olive.basic.buttons .active.button,
+.pq.inverted.olive.buttons .basic.active.button,
+.pq.inverted.olive.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #daed59 inset !important;
+          box-shadow: 0px 0px 0px 2px #daed59 inset !important;
+  color: #D9E778 !important;
+}
+.pq.inverted.olive.basic.buttons .button:active,
+.pq.inverted.olive.buttons .basic.button:active,
+.pq.inverted.olive.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #cddf4d inset !important;
+          box-shadow: 0px 0px 0px 2px #cddf4d inset !important;
+  color: #D9E778 !important;
+}
+
+/*--- Yellow ---*/
+
+.pq.yellow.buttons .button,
+.pq.yellow.button {
+  background-color: #FBBD08;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.yellow.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.yellow.buttons .button:hover,
+.pq.yellow.button:hover {
+  background-color: #eaae00;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.yellow.buttons .button:focus,
+.pq.yellow.button:focus {
+  background-color: #daa300;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.yellow.buttons .button:active,
+.pq.yellow.button:active {
+  background-color: #cd9903;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.yellow.buttons .active.button,
+.pq.yellow.buttons .active.button:active,
+.pq.yellow.active.button,
+.pq.yellow.button .active.button:active {
+  background-color: #eaae00;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.yellow.buttons .button,
+.pq.basic.yellow.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #FBBD08 inset !important;
+          box-shadow: 0px 0px 0px 1px #FBBD08 inset !important;
+  color: #FBBD08 !important;
+}
+.pq.basic.yellow.buttons .button:hover,
+.pq.basic.yellow.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #eaae00 inset !important;
+          box-shadow: 0px 0px 0px 1px #eaae00 inset !important;
+  color: #eaae00 !important;
+}
+.pq.basic.yellow.buttons .button:focus,
+.pq.basic.yellow.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #daa300 inset !important;
+          box-shadow: 0px 0px 0px 1px #daa300 inset !important;
+  color: #eaae00 !important;
+}
+.pq.basic.yellow.buttons .active.button,
+.pq.basic.yellow.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #eaae00 inset !important;
+          box-shadow: 0px 0px 0px 1px #eaae00 inset !important;
+  color: #cd9903 !important;
+}
+.pq.basic.yellow.buttons .button:active,
+.pq.basic.yellow.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #cd9903 inset !important;
+          box-shadow: 0px 0px 0px 1px #cd9903 inset !important;
+  color: #cd9903 !important;
+}
+.pq.buttons:not(.vertical) > .basic.yellow.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.yellow.buttons .button,
+.pq.inverted.yellow.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #FFE21F inset !important;
+          box-shadow: 0px 0px 0px 2px #FFE21F inset !important;
+  color: #FFE21F;
+}
+.pq.inverted.yellow.buttons .button:hover,
+.pq.inverted.yellow.button:hover,
+.pq.inverted.yellow.buttons .button:focus,
+.pq.inverted.yellow.button:focus,
+.pq.inverted.yellow.buttons .button.active,
+.pq.inverted.yellow.button.active,
+.pq.inverted.yellow.buttons .button:active,
+.pq.inverted.yellow.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: rgba(0, 0, 0, 0.6);
+}
+.pq.inverted.yellow.buttons .button:hover,
+.pq.inverted.yellow.button:hover {
+  background-color: #ffdf05;
+}
+.pq.inverted.yellow.buttons .button:focus,
+.pq.inverted.yellow.button:focus {
+  background-color: #f5d500;
+}
+.pq.inverted.yellow.buttons .active.button,
+.pq.inverted.yellow.active.button {
+  background-color: #ffdf05;
+}
+.pq.inverted.yellow.buttons .button:active,
+.pq.inverted.yellow.button:active {
+  background-color: #ebcd00;
+}
+
+/* Inverted Basic */
+.pq.inverted.yellow.basic.buttons .button,
+.pq.inverted.yellow.buttons .basic.button,
+.pq.inverted.yellow.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.yellow.basic.buttons .button:hover,
+.pq.inverted.yellow.buttons .basic.button:hover,
+.pq.inverted.yellow.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #ffdf05 inset !important;
+          box-shadow: 0px 0px 0px 2px #ffdf05 inset !important;
+  color: #FFE21F !important;
+}
+.pq.inverted.yellow.basic.buttons .button:focus,
+.pq.inverted.yellow.basic.buttons .button:focus,
+.pq.inverted.yellow.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #f5d500 inset !important;
+          box-shadow: 0px 0px 0px 2px #f5d500 inset !important;
+  color: #FFE21F !important;
+}
+.pq.inverted.yellow.basic.buttons .active.button,
+.pq.inverted.yellow.buttons .basic.active.button,
+.pq.inverted.yellow.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #ffdf05 inset !important;
+          box-shadow: 0px 0px 0px 2px #ffdf05 inset !important;
+  color: #FFE21F !important;
+}
+.pq.inverted.yellow.basic.buttons .button:active,
+.pq.inverted.yellow.buttons .basic.button:active,
+.pq.inverted.yellow.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #ebcd00 inset !important;
+          box-shadow: 0px 0px 0px 2px #ebcd00 inset !important;
+  color: #FFE21F !important;
+}
+
+/*-------------------
+       Primary
+--------------------*/
+
+
+/*--- Standard ---*/
+
+.pq.primary.buttons .button,
+.pq.primary.button {
+  background-color: #2185D0;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.primary.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.primary.buttons .button:hover,
+.pq.primary.button:hover {
+  background-color: #1678c2;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.primary.buttons .button:focus,
+.pq.primary.button:focus {
+  background-color: #0d71bb;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.primary.buttons .button:active,
+.pq.primary.button:active {
+  background-color: #1a69a4;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.primary.buttons .active.button,
+.pq.primary.buttons .active.button:active,
+.pq.primary.active.button,
+.pq.primary.button .active.button:active {
+  background-color: #1279c6;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.primary.buttons .button,
+.pq.basic.primary.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #2185D0 inset !important;
+          box-shadow: 0px 0px 0px 1px #2185D0 inset !important;
+  color: #2185D0 !important;
+}
+.pq.basic.primary.buttons .button:hover,
+.pq.basic.primary.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #1678c2 inset !important;
+          box-shadow: 0px 0px 0px 1px #1678c2 inset !important;
+  color: #1678c2 !important;
+}
+.pq.basic.primary.buttons .button:focus,
+.pq.basic.primary.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #0d71bb inset !important;
+          box-shadow: 0px 0px 0px 1px #0d71bb inset !important;
+  color: #1678c2 !important;
+}
+.pq.basic.primary.buttons .active.button,
+.pq.basic.primary.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #1279c6 inset !important;
+          box-shadow: 0px 0px 0px 1px #1279c6 inset !important;
+  color: #1a69a4 !important;
+}
+.pq.basic.primary.buttons .button:active,
+.pq.basic.primary.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #1a69a4 inset !important;
+          box-shadow: 0px 0px 0px 1px #1a69a4 inset !important;
+  color: #1a69a4 !important;
+}
+.pq.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.primary.buttons .button,
+.pq.inverted.primary.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #54C8FF inset !important;
+          box-shadow: 0px 0px 0px 2px #54C8FF inset !important;
+  color: #54C8FF;
+}
+.pq.inverted.primary.buttons .button:hover,
+.pq.inverted.primary.button:hover,
+.pq.inverted.primary.buttons .button:focus,
+.pq.inverted.primary.button:focus,
+.pq.inverted.primary.buttons .button.active,
+.pq.inverted.primary.button.active,
+.pq.inverted.primary.buttons .button:active,
+.pq.inverted.primary.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.primary.buttons .button:hover,
+.pq.inverted.primary.button:hover {
+  background-color: #3ac0ff;
+}
+.pq.inverted.primary.buttons .button:focus,
+.pq.inverted.primary.button:focus {
+  background-color: #2bbbff;
+}
+.pq.inverted.primary.buttons .active.button,
+.pq.inverted.primary.active.button {
+  background-color: #3ac0ff;
+}
+.pq.inverted.primary.buttons .button:active,
+.pq.inverted.primary.button:active {
+  background-color: #21b8ff;
+}
+
+/* Inverted Basic */
+.pq.inverted.primary.basic.buttons .button,
+.pq.inverted.primary.buttons .basic.button,
+.pq.inverted.primary.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.primary.basic.buttons .button:hover,
+.pq.inverted.primary.buttons .basic.button:hover,
+.pq.inverted.primary.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #3ac0ff inset !important;
+          box-shadow: 0px 0px 0px 2px #3ac0ff inset !important;
+  color: #54C8FF !important;
+}
+.pq.inverted.primary.basic.buttons .button:focus,
+.pq.inverted.primary.basic.buttons .button:focus,
+.pq.inverted.primary.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #2bbbff inset !important;
+          box-shadow: 0px 0px 0px 2px #2bbbff inset !important;
+  color: #54C8FF !important;
+}
+.pq.inverted.primary.basic.buttons .active.button,
+.pq.inverted.primary.buttons .basic.active.button,
+.pq.inverted.primary.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #3ac0ff inset !important;
+          box-shadow: 0px 0px 0px 2px #3ac0ff inset !important;
+  color: #54C8FF !important;
+}
+.pq.inverted.primary.basic.buttons .button:active,
+.pq.inverted.primary.buttons .basic.button:active,
+.pq.inverted.primary.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #21b8ff inset !important;
+          box-shadow: 0px 0px 0px 2px #21b8ff inset !important;
+  color: #54C8FF !important;
+}
+
+/*-------------------
+      Secondary
+--------------------*/
+
+
+/* Standard */
+.pq.secondary.buttons .button,
+.pq.secondary.button {
+  background-color: #1B1C1D;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.secondary.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.secondary.buttons .button:hover,
+.pq.secondary.button:hover {
+  background-color: #27292a;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.secondary.buttons .button:focus,
+.pq.secondary.button:focus {
+  background-color: #2e3032;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.secondary.buttons .button:active,
+.pq.secondary.button:active {
+  background-color: #343637;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.secondary.buttons .active.button,
+.pq.secondary.buttons .active.button:active,
+.pq.secondary.active.button,
+.pq.secondary.button .active.button:active {
+  background-color: #27292a;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.secondary.buttons .button,
+.pq.basic.secondary.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #1B1C1D inset !important;
+          box-shadow: 0px 0px 0px 1px #1B1C1D inset !important;
+  color: #1B1C1D !important;
+}
+.pq.basic.secondary.buttons .button:hover,
+.pq.basic.secondary.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #27292a inset !important;
+          box-shadow: 0px 0px 0px 1px #27292a inset !important;
+  color: #27292a !important;
+}
+.pq.basic.secondary.buttons .button:focus,
+.pq.basic.secondary.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #2e3032 inset !important;
+          box-shadow: 0px 0px 0px 1px #2e3032 inset !important;
+  color: #27292a !important;
+}
+.pq.basic.secondary.buttons .active.button,
+.pq.basic.secondary.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #27292a inset !important;
+          box-shadow: 0px 0px 0px 1px #27292a inset !important;
+  color: #343637 !important;
+}
+.pq.basic.secondary.buttons .button:active,
+.pq.basic.secondary.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #343637 inset !important;
+          box-shadow: 0px 0px 0px 1px #343637 inset !important;
+  color: #343637 !important;
+}
+.pq.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Inverted */
+.pq.inverted.secondary.buttons .button,
+.pq.inverted.secondary.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px #545454 inset !important;
+          box-shadow: 0px 0px 0px 2px #545454 inset !important;
+  color: #545454;
+}
+.pq.inverted.secondary.buttons .button:hover,
+.pq.inverted.secondary.button:hover,
+.pq.inverted.secondary.buttons .button:focus,
+.pq.inverted.secondary.button:focus,
+.pq.inverted.secondary.buttons .button.active,
+.pq.inverted.secondary.button.active,
+.pq.inverted.secondary.buttons .button:active,
+.pq.inverted.secondary.button:active {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.pq.inverted.secondary.buttons .button:hover,
+.pq.inverted.secondary.button:hover {
+  background-color: #616161;
+}
+.pq.inverted.secondary.buttons .button:focus,
+.pq.inverted.secondary.button:focus {
+  background-color: #686868;
+}
+.pq.inverted.secondary.buttons .active.button,
+.pq.inverted.secondary.active.button {
+  background-color: #616161;
+}
+.pq.inverted.secondary.buttons .button:active,
+.pq.inverted.secondary.button:active {
+  background-color: #6e6e6e;
+}
+
+/* Inverted Basic */
+.pq.inverted.secondary.basic.buttons .button,
+.pq.inverted.secondary.buttons .basic.button,
+.pq.inverted.secondary.basic.button {
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+          box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.5) inset !important;
+  color: #FFFFFF !important;
+}
+.pq.inverted.secondary.basic.buttons .button:hover,
+.pq.inverted.secondary.buttons .basic.button:hover,
+.pq.inverted.secondary.basic.button:hover {
+  -webkit-box-shadow: 0px 0px 0px 2px #616161 inset !important;
+          box-shadow: 0px 0px 0px 2px #616161 inset !important;
+  color: #545454 !important;
+}
+.pq.inverted.secondary.basic.buttons .button:focus,
+.pq.inverted.secondary.basic.buttons .button:focus,
+.pq.inverted.secondary.basic.button:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #686868 inset !important;
+          box-shadow: 0px 0px 0px 2px #686868 inset !important;
+  color: #545454 !important;
+}
+.pq.inverted.secondary.basic.buttons .active.button,
+.pq.inverted.secondary.buttons .basic.active.button,
+.pq.inverted.secondary.basic.active.button {
+  -webkit-box-shadow: 0px 0px 0px 2px #616161 inset !important;
+          box-shadow: 0px 0px 0px 2px #616161 inset !important;
+  color: #545454 !important;
+}
+.pq.inverted.secondary.basic.buttons .button:active,
+.pq.inverted.secondary.buttons .basic.button:active,
+.pq.inverted.secondary.basic.button:active {
+  -webkit-box-shadow: 0px 0px 0px 2px #6e6e6e inset !important;
+          box-shadow: 0px 0px 0px 2px #6e6e6e inset !important;
+  color: #545454 !important;
+}
+
+/*---------------
+    Positive
+----------------*/
+
+
+/* Standard */
+.pq.positive.buttons .button,
+.pq.positive.button {
+  background-color: #21BA45;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.positive.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.positive.buttons .button:hover,
+.pq.positive.button:hover {
+  background-color: #16ab39;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.positive.buttons .button:focus,
+.pq.positive.button:focus {
+  background-color: #0ea432;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.positive.buttons .button:active,
+.pq.positive.button:active {
+  background-color: #198f35;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.positive.buttons .active.button,
+.pq.positive.buttons .active.button:active,
+.pq.positive.active.button,
+.pq.positive.button .active.button:active {
+  background-color: #13ae38;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.positive.buttons .button,
+.pq.basic.positive.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #21BA45 inset !important;
+          box-shadow: 0px 0px 0px 1px #21BA45 inset !important;
+  color: #21BA45 !important;
+}
+.pq.basic.positive.buttons .button:hover,
+.pq.basic.positive.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #16ab39 inset !important;
+          box-shadow: 0px 0px 0px 1px #16ab39 inset !important;
+  color: #16ab39 !important;
+}
+.pq.basic.positive.buttons .button:focus,
+.pq.basic.positive.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #0ea432 inset !important;
+          box-shadow: 0px 0px 0px 1px #0ea432 inset !important;
+  color: #16ab39 !important;
+}
+.pq.basic.positive.buttons .active.button,
+.pq.basic.positive.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #13ae38 inset !important;
+          box-shadow: 0px 0px 0px 1px #13ae38 inset !important;
+  color: #198f35 !important;
+}
+.pq.basic.positive.buttons .button:active,
+.pq.basic.positive.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #198f35 inset !important;
+          box-shadow: 0px 0px 0px 1px #198f35 inset !important;
+  color: #198f35 !important;
+}
+.pq.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/*---------------
+     Negative
+----------------*/
+
+
+/* Standard */
+.pq.negative.buttons .button,
+.pq.negative.button {
+  background-color: #DB2828;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+.pq.negative.button {
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.negative.buttons .button:hover,
+.pq.negative.button:hover {
+  background-color: #d01919;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.negative.buttons .button:focus,
+.pq.negative.button:focus {
+  background-color: #ca1010;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.negative.buttons .button:active,
+.pq.negative.button:active {
+  background-color: #b21e1e;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+.pq.negative.buttons .active.button,
+.pq.negative.buttons .active.button:active,
+.pq.negative.active.button,
+.pq.negative.button .active.button:active {
+  background-color: #d41515;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Basic */
+.pq.basic.negative.buttons .button,
+.pq.basic.negative.button {
+  -webkit-box-shadow: 0px 0px 0px 1px #DB2828 inset !important;
+          box-shadow: 0px 0px 0px 1px #DB2828 inset !important;
+  color: #DB2828 !important;
+}
+.pq.basic.negative.buttons .button:hover,
+.pq.basic.negative.button:hover {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #d01919 inset !important;
+          box-shadow: 0px 0px 0px 1px #d01919 inset !important;
+  color: #d01919 !important;
+}
+.pq.basic.negative.buttons .button:focus,
+.pq.basic.negative.button:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #ca1010 inset !important;
+          box-shadow: 0px 0px 0px 1px #ca1010 inset !important;
+  color: #d01919 !important;
+}
+.pq.basic.negative.buttons .active.button,
+.pq.basic.negative.active.button {
+  background: transparent !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #d41515 inset !important;
+          box-shadow: 0px 0px 0px 1px #d41515 inset !important;
+  color: #b21e1e !important;
+}
+.pq.basic.negative.buttons .button:active,
+.pq.basic.negative.button:active {
+  -webkit-box-shadow: 0px 0px 0px 1px #b21e1e inset !important;
+          box-shadow: 0px 0px 0px 1px #b21e1e inset !important;
+  color: #b21e1e !important;
+}
+.pq.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
+  margin-left: -1px;
+}
+
+
+/*******************************
+            Groups
+*******************************/
+
+.pq.buttons {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 0em;
+  vertical-align: baseline;
+  margin: 0em 0.25em 0em 0em;
+}
+.pq.buttons:not(.basic):not(.inverted) {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* Clearfix */
+.pq.buttons:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* Standard Group */
+.pq.buttons .button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  margin: 0em;
+  border-radius: 0em;
+  margin: 0px 0px 0px 0px;
+}
+.pq.buttons > .pq.button:not(.basic):not(.inverted),
+.pq.buttons:not(.basic):not(.inverted) > .button {
+  -webkit-box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.pq.buttons .button:first-child {
+  border-left: none;
+  margin-left: 0em;
+  border-top-left-radius: 0.28571429rem;
+  border-bottom-left-radius: 0.28571429rem;
+}
+.pq.buttons .button:last-child {
+  border-top-right-radius: 0.28571429rem;
+  border-bottom-right-radius: 0.28571429rem;
+}
+
+/* Vertical  Style */
+.pq.vertical.buttons {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.pq.vertical.buttons .button {
+  display: block;
+  float: none;
+  width: 100%;
+  margin: 0px 0px 0px 0px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0em;
+}
+.pq.vertical.buttons .button:first-child {
+  border-top-left-radius: 0.28571429rem;
+  border-top-right-radius: 0.28571429rem;
+}
+.pq.vertical.buttons .button:last-child {
+  margin-bottom: 0px;
+  border-bottom-left-radius: 0.28571429rem;
+  border-bottom-right-radius: 0.28571429rem;
+}
+.pq.vertical.buttons .button:only-child {
+  border-radius: 0.28571429rem;
+}
+
+
+/*******************************
+         Theme Overrides
+*******************************/
+
+
+
+/*******************************
+         Site Overrides
+*******************************/
+

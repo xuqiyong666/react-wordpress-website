@@ -1,0 +1,57 @@
+
+.pq-v2-info-card {
+  font-size: 12px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 0 #dfe0f1, 0 1px 3px 0 rgba(182,188,224,.5), 0 4px 12px 0 rgba(218,221,238,.5);
+}
+
+.pq-v2-info-card .module_title {
+    color: #0a1633;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+
+.pq-v2-info-card .module_button {
+  float: right;
+  margin-left: 8px;
+}
+
+.pq-v2-info-card .module__list-item {
+    padding: 8px 0;
+    line-height: 20px;
+    border-bottom: 1px solid #e1e6f0;
+    display: flex;
+    align-items: center;
+}
+
+.pq-v2-info-card .module__list-title {
+    width: 30%;
+    color: #6b798e;
+}
+
+.pq-v2-info-card .module__list-info {
+    width: 40%;
+    position: relative;
+    color: #0a1633;
+    padding-right: 4px;
+    box-sizing: border-box;
+}
+
+.pq-v2-info-card .module__list-operate {
+    width: 30%;
+    position: relative;
+    color: #0a1633;
+    box-sizing: border-box;
+}
+
+.pq-v2-info-card .module__list-name {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

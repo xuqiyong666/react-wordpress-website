@@ -1,0 +1,96 @@
+
+.pq-article-list {
+  background: white;
+  box-sizing: border-box;
+}
+
+.pq-article-list > .one-article {
+  position: relative;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.6);
+  min-height: 40px;
+}
+
+.pq-article-list > .one-article > .logo {
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.pq-article-list > .one-article > .logo > img {
+  text-align: center;
+  width: 90%;
+  height: 100%;
+}
+
+.pq-article-list > .one-article > .info {
+  width: 70%;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.pq-article-list > .one-article > .info > .title {
+  font-size: 18px;
+  margin-bottom: 12px;
+  line-height: 150%;
+  font-weight: bold;
+}
+
+.pq-article-list > .one-article > .info > .category {
+  display: inline;
+}
+
+.pq-article-list > .one-article > .info > .time {
+  display: inline;
+  margin-left: 20px;
+}
+
+.pq-article-list > .one-article > .info > .author {
+  display: inline;
+  margin-left: 20px;
+}
+
+/* PC端样式 */
+@media screen and (min-width: 1040px) {
+  .pq-article-list {
+    padding: 0 10px;
+  }
+}
+
+/* Pad样式 */
+@media screen and (max-width: 840px) {
+
+  .pq-article-list {
+    background: inherit;
+  }
+
+  .pq-article-list > .one-article {
+    border-bottom: none;
+    margin: 10px;
+    padding: 10px 0;
+    background: white;
+  }
+
+  .pq-article-list > .one-article > .logo {
+    padding: 0 10px;
+    max-width: 220px;
+  }
+
+}
+
+/* Mobile样式 */
+@media screen and (max-width: 440px) {
+
+  .pq-article-list > .one-article > .info > .title {
+    font-size: 14px;
+  }
+
+  .pq-article-list > .one-article > .info {
+    font-size: 12px;
+    padding-left: 0;
+    padding-right: 10px;
+  }
+}

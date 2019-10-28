@@ -1,0 +1,72 @@
+
+/* 简化的文章列表 */
+
+.pq-article-list-small {
+  position: relative;
+  padding: 20px;
+  padding-bottom: 1px;
+  background: white;
+}
+
+.pq-article-list-small > .module-title {
+  font-size: 20px;
+  line-height: 100%;
+  padding-bottom: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pq-article-list-small > .one-article {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  max-height: 60px;
+  line-height: 20px;
+  overflow: hidden;
+}
+
+.pq-article-list-small > .one-article > .logo {
+  width: 60px;
+  min-width: 60px;
+  max-width: 100px;
+  max-height: 60px;
+  max-width: 100px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.pq-article-list-small > .one-article > .logo img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.pq-article-list-small > .one-article > .title {
+  min-width: 70%;
+  font-size: 14px;
+  line-height: 20px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  max-height: 60px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+
+/* PC端样式 */
+@media screen and (min-width: 1040px) {
+
+}
+
+/* Mobile样式 */
+@media screen and (max-width: 840px) {
+
+}
+
+/* Mobile样式 */
+@media screen and (max-width: 440px) {
+
+
+}
