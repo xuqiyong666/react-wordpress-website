@@ -6,13 +6,11 @@ import {
     FETCH_ARTICLES_SUCCESS,
 } from '../actions'
 
-// function defaultArticle
 const defaultState = {
     pageLoaded: 0,
     pageSize: 20,
     hasMoreArticles: true,
     isFetching: false,
-    cacheLimit: 500, //缓存最新的xx篇文章
     articleList: [],
     articleMapping: {}
 }
