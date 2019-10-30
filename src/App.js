@@ -29,12 +29,13 @@ import {
   Route
 } from "react-router-dom";
 
-import HomePage from './HomePage.js'
-import NotFoundPage from './pages/NotFoundPage.js'
+import HomePage from './containers/HomePage'
+import NotFoundPage from './pages/NotFoundPage'
 
+import { CategoryPageWithParams, CategoryPageWithQuery } from './pages/CategoryPage'
+import { ArticlePageWithParams } from './pages/ArticlePage'
 
-import { CategoryPageWithParams, CategoryPageWithQuery } from './pages/CategoryPage.js'
-import { ArticlePageWithParams } from './pages/ArticlePage.js'
+import ScrollToTop from './ScrollToTop'
 
 const scrollery = require('cssplus/scrollery')
 
@@ -43,6 +44,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <HomePage />

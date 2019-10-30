@@ -42,7 +42,7 @@ class Layout extends React.Component {
                                 </div>
                             </div>
 
-                            {<UserInfo />}
+                            {/* {<UserInfo />} */}
                         </div>
                     </div>
 
@@ -114,37 +114,37 @@ class Layout extends React.Component {
 }
 
 
-function UserInfo(props) {
-    return (
-        <div className="user-info">
-            {<UserPanel user={props.user} />}
-        </div>
-    )
-}
+// function UserInfo(props) {
+//     return (
+//         <div className="user-info">
+//             {<UserPanel user={props.user} />}
+//         </div>
+//     )
+// }
 
-function UserPanel(props) {
+// function UserPanel(props) {
 
-    if (!props.user) {
-        return <GuestPanel />
-    }
+//     if (!props.user) {
+//         return <GuestPanel />
+//     }
 
-    return (
-        <React.Fragment>
-            <i className="fas fa-user pq-icon" />
-            <span className="pq-link white">{props.user.name}</span>
-        </React.Fragment>
-    )
-}
+//     return (
+//         <React.Fragment>
+//             <i className="fas fa-user pq-icon" />
+//             <span className="pq-link white">{props.user.name}</span>
+//         </React.Fragment>
+//     )
+// }
 
-function GuestPanel(props) {
-    return (
-        <React.Fragment>
-            <span className="pq-link white" onClick={()=>alert("TODO 登录页面")}>
-                <i className="fas fa-user pq-icon" />
-                <span>登录</span>
-            </span>
-        </React.Fragment>
-    )
-}
+// function GuestPanel(props) {
+//     return (
+//         <React.Fragment>
+//             <span className="pq-link white" onClick={()=>alert("TODO 登录页面")}>
+//                 <i className="fas fa-user pq-icon" />
+//                 <span>登录</span>
+//             </span>
+//         </React.Fragment>
+//     )
+// }
 
 export default Layout

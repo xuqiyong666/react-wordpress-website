@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../Layout.js"
+import Layout from "../Layout"
 
 class NotFoundPage extends React.Component {
     render() {

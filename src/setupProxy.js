@@ -1,6 +1,6 @@
 
 const proxy = require('http-proxy-middleware');
-const morgan = require("morgan");
+// const morgan = require("morgan");
 
 module.exports = function (app) {
 
@@ -15,5 +15,5 @@ module.exports = function (app) {
         })
     );
 
-    app.use(morgan('combined'));
+    // app.use(morgan('combined'));
 };
