@@ -16,11 +16,11 @@ export const fetchArticles = () => (dispatch, getState) => {
     let stateArticles = state.articles
 
     if (stateArticles.isFetching) {
-        return Promise.reject(Error("is fetching"))
+        return Promise.reject("articles is fetching")
     }
 
     if (!stateArticles.hasMoreArticles) {
-        return Promise.reject(Error("no more articles"))
+        return Promise.reject("no more articles")
     }
 
     let nextPage = stateArticles.pageLoaded + 1
@@ -33,12 +33,9 @@ export const fetchArticles = () => (dispatch, getState) => {
         let newArticles = response.data
 
         dispatch(fetchArticlesSuccess(newArticles))
-        return true
     }).catch(error => {
 
         dispatch(fetchArticlesFailed(error))
-
-        return false
     })
 }
 

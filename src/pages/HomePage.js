@@ -1,23 +1,30 @@
 
 import React from 'react'
-import Layout from '../Layout'
+import Layout from '../components/Layout'
 
 import { Link } from 'react-router-dom';
 
 import articleReader from '../utils/articleReader'
 
-// import ApiConfig from "./config/api"
-// import Axios from 'axios';
-
 class HomePage extends React.Component {
 
     render() {
 
-        const content = <Content articles={this.props.articles} fetchArticles={this.props.fetchArticles} />
+        const content = (
+            <Content
+                stickArticles={this.props.stickArticles}
+                articles={this.props.articles}
+                fetchArticles={this.props.fetchArticles}
+            />
 
+        )
         return (
             <Layout content={content} ></Layout>
         )
+    }
+
+    componentDidMount() {
+        this.props.fetchStickArticles()
     }
 }
 
@@ -33,17 +40,17 @@ class Content extends React.Component {
 
     render() {
 
-        const stickyArticles = this.state.articleList.slice(0, 3)
-        let stickyArticlesFrag
-        if (stickyArticles.length >= 3) {
-            stickyArticlesFrag = (
+        const stArticles = this.props.stickArticles.articleList
+        let stickArticlesFrag
+        if (stArticles.length >= 3) {
+            stickArticlesFrag = (
                 <div className="pq-article-exhibition">
                     <div className="big-part">
-                        <StickyArticle article={stickyArticles[0]} />
+                        <StickArticle article={stArticles[0]} />
                     </div>
                     <div className="small-part">
-                        <StickyArticle article={stickyArticles[1]} side={true} orderClass="first" />
-                        <StickyArticle article={stickyArticles[2]} side={true} />
+                        <StickArticle article={stArticles[1]} side={true} orderClass="first" />
+                        <StickArticle article={stArticles[2]} side={true} />
                     </div>
                 </div>
             )
@@ -52,14 +59,14 @@ class Content extends React.Component {
         let categoriesFrag
         categoriesFrag = (
             <div className="pq-index-categories">
-                <Link to="/todo">
-                    <span>分类1</span>
+                <Link to="/category/11">
+                    <span>分类11</span>
                 </Link>
-                <Link to="/todo">
-                    <span>分类2</span>
+                <Link to="/category/22">
+                    <span>分类22</span>
                 </Link>
-                <Link to="/todo">
-                    <span>分类3</span>
+                <Link to="/category/33">
+                    <span>分类33</span>
                 </Link>
             </div>
         )
@@ -71,10 +78,17 @@ class Content extends React.Component {
             )
         })
 
-        const output = (
+        const moreArticleButtonArea = (
+            <MoreArticleButtonArea
+                articles={this.props.articles}
+                loading_more_articles={this.loading_more_articles.bind(this)}
+            />
+        )
+
+        return (
             <React.Fragment>
 
-                {stickyArticlesFrag}
+                {stickArticlesFrag}
                 {categoriesFrag}
 
                 <div className="pq-section-title">
@@ -86,21 +100,15 @@ class Content extends React.Component {
                     {articlesFrag}
                 </div>
 
-                <p>
-                    <button onClick={this.loading_more_articles.bind(this)}>{this.props.articles.isFetching ? "加载中..." : "加载更多"}</button>
-                </p>
-            </React.Fragment>
+                {moreArticleButtonArea}
+
+            </React.Fragment >
         )
-
-        return output
     }
-
-
 
     componentDidMount() {
 
         this.loading_more_articles()
-
     }
 
     loading_more_articles() {
@@ -126,7 +134,7 @@ class Content extends React.Component {
 
 }
 
-function StickyArticle(props) {
+function StickArticle(props) {
 
     const article = props.article
     const side = props.side
@@ -217,6 +225,57 @@ function ArticleCard(props) {
         </Link>
     )
 
+}
+
+function MoreArticleButtonArea(props) {
+
+    const articles = props.articles
+    const loading_more_articles = props.loading_more_articles
+
+    let buttonFrag
+    if (!articles.isFetching && articles.hasMoreArticles) {
+        buttonFrag = (
+            <div style={{ textAlign: "center" }}>
+                <span onClick={loading_more_articles} className="weui-btn weui-btn_primary">查看更多</span>
+            </div>
+        )
+    }
+
+    let loadingFrag
+    if (articles.isFetching) {
+        loadingFrag = (
+            <div className="weui-loadmore">
+                <i className="weui-loading"></i>
+                <span className="weui-loadmore__tips">正在加载</span>
+            </div>
+        )
+    }
+
+    let nothngFrag
+    if (!articles.isFetching && !articles.articleList.length) {
+        nothngFrag = (
+            <div className="weui-loadmore weui-loadmore_line">
+                <span className="weui-loadmore__tips">暂无数据</span>
+            </div>
+        )
+    }
+
+    let noMoreFrag
+    if (!articles.isFetching && !articles.hasMoreArticles) {
+        noMoreFrag = <div className="weui-loadmore weui-loadmore_line">
+            <span className="weui-loadmore__tips">无更多内容</span>
+        </div>
+    }
+
+    return (
+        <div style={{ minHeight: "50px", margin: "30px 0" }}>
+
+            {buttonFrag}
+            {loadingFrag}
+            {nothngFrag}
+            {noMoreFrag}
+        </div>
+    )
 }
 
 export default HomePage

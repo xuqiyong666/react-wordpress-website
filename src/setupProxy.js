@@ -6,7 +6,7 @@ module.exports = function (app) {
 
     app.use(
         '/api-local/', proxy({
-            target: 'https://www.pentaq.com/',
+            target: 'https://blog.jeffrey6052.com/',
             changeOrigin: true,
             autoRewrite: true,
             pathRewrite: {

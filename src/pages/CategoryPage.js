@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Layout from '../Layout'
+import Layout from '../components/Layout'
 
 import {
     Link,
@@ -20,12 +20,8 @@ class CategoryPage extends React.Component {
         )
     }
 
-    componentWillMount() {
-        console.log(`CategoryPage will mount: ${this.props.categoryId}`)
-    }
-
     componentDidMount() {
-
+        console.log(`CategoryPage DiD mount: ${this.props.categoryId}`)
     }
 }
 

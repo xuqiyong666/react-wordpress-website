@@ -23,6 +23,9 @@ import './css/table_card_v1.css'
 import './css/triangle.css'
 import './css/simple_card.css'
 
+import 'weui';
+import 'react-weui/build/packages/react-weui.css';
+
 import {
   BrowserRouter as Router,
   Switch,

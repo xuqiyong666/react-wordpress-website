@@ -4,11 +4,11 @@ import {
     FETCH_ARTICLES_START,
     FETCH_ARTICLES_FAILED,
     FETCH_ARTICLES_SUCCESS,
-} from '../actions'
+} from '../actions/articles'
 
 const defaultState = {
     pageLoaded: 0,
-    pageSize: 20,
+    pageSize: 10, //每页几条
     hasMoreArticles: true,
     isFetching: false,
     articleList: [],
