@@ -60,7 +60,7 @@ const easyFormater = {
   },
   format_float: function(value){
 
-    if(value == 0){
+    if(value === 0){
       return "0"
     }
 
@@ -85,7 +85,7 @@ const easyFormater = {
   },
   format_percent: function(value){
 
-    if(value == 0){
+    if(value === 0){
       return "0%"
     }
 
@@ -125,27 +125,27 @@ const easyFormater = {
         return string;
   },
   format_boolean: function(value){
-    if(value==true){
+    if(value===true){
       return "是"
-    }else if(value==false){
+    }else if(value===false){
       return "否"
     }else{
       return value
     }
   },
   format_en_boolean: function(value){
-    if(value==true){
+    if(value===true){
       return "Yes"
-    }else if(value==false){
+    }else if(value===false){
       return "No"
     }else{
       return value
     }
   },
   format_win: function(value){
-    if(value==true){
+    if(value===true){
       return "胜"
-    }else if(value==false){
+    }else if(value===false){
       return "负"
     }else{
       return value

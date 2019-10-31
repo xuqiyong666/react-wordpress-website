@@ -1,5 +1,5 @@
 
-import easyFormater from './utils/easyFormater'
+import easyFormater from './easyFormater'
 
 let reader = {
   read_article_full_image_url: function(article){

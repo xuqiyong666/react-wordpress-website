@@ -100,11 +100,10 @@
   -webkit-box-orient: vertical;
 }
 
+.pq-flow-article-cards .info-box .fake-link:hover,
 .pq-flow-article-cards .info-box a.title:hover {
   color: #ff9300;
 }
-
-
 
 .pq-flow-article-cards .info-box .bottom-bar {
   width: 100%;
