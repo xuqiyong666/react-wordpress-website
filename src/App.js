@@ -36,7 +36,7 @@ import HomePage from './containers/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 
 import { CategoryPageWithParams, CategoryPageWithQuery } from './pages/CategoryPage'
-import { ArticlePageWithParams } from './pages/ArticlePage'
+import { ArticlePageWithParams } from './containers/ArticlePage'
 
 import ScrollToTop from './ScrollToTop'
 

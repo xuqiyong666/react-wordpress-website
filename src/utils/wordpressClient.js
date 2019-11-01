@@ -44,6 +44,15 @@ class WordpressClient {
         return axios.get(apiUrl, { params: apiParams })
     }
 
+    fetch_article(articleId){
+
+        const apiUrl = `${this.host}/wp-json/wp/v2/posts/${articleId}`
+        const apiParams = {
+            _embed: 1
+        }
+
+        return axios.get(apiUrl, { params: apiParams })
+    }
 }
 
 const myWordpressClient = new WordpressClient(ApiConfig.host)

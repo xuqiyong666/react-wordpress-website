@@ -3,7 +3,6 @@ import React from 'react'
 import Layout from '../components/Layout'
 
 import {
-    Link,
     useParams,
     useLocation
 } from "react-router-dom";
@@ -45,17 +44,7 @@ class Content extends React.Component {
                 <h3>Category Content</h3>
                 <p>categoryId = {this.props.categoryId}</p>
 
-                <p style={{ margin: "5px 0" }}>
-                    <Link to="/article/1" >文章1</Link>
-                </p>
-
-                <p style={{ margin: "5px 0" }}>
-                    <Link to="/article/2" >文章2</Link>
-                </p>
-
-                <p style={{ margin: "5px 0" }}>
-                    <Link to="/article/3" >文章3</Link>
-                </p>
+                <h1>TODO 分类页</h1>
             </div>
         )
     }

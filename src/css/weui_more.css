@@ -9,6 +9,35 @@
   line-height: 170%;
 }
 
+.weui-article,
+.weui-article * {
+  letter-spacing: 0 !important;
+}
+
+.weui-article video {
+  max-height: 400px;
+}
+
+.weui-article img {
+  display: block;
+}
+
+.weui-article pre {
+  overflow-x: scroll;
+}
+
+.weui-article figure {
+  margin: 1em 0;
+}
+
+.weui-article figcaption {
+  margin-top: .5em;
+  margin-bottom: 1.5em;
+  font-style: italic;
+  color: #555d66;
+  font-size: 13px;
+}
+
 .weui-article p,
 .weui-article h1,
 .weui-article h2,

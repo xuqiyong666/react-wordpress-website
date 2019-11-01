@@ -80,6 +80,7 @@ class Content extends React.Component {
 
         const moreArticleButtonArea = (
             <MoreArticleButtonArea
+                page={this.state.page}
                 articles={this.props.articles}
                 loading_more_articles={this.loading_more_articles.bind(this)}
             />
@@ -229,11 +230,13 @@ function ArticleCard(props) {
 
 function MoreArticleButtonArea(props) {
 
+    const page = props.page
     const articles = props.articles
     const loading_more_articles = props.loading_more_articles
 
     let buttonFrag
-    if (!articles.isFetching && articles.hasMoreArticles) {
+
+    if (page < articles.pageLoaded || (articles.hasMoreArticles && !articles.isFetching)) {
         buttonFrag = (
             <div style={{ textAlign: "center" }}>
                 <span onClick={loading_more_articles} className="weui-btn weui-btn_primary">查看更多</span>
@@ -261,7 +264,7 @@ function MoreArticleButtonArea(props) {
     }
 
     let noMoreFrag
-    if (!articles.isFetching && !articles.hasMoreArticles) {
+    if (page >= articles.pageLoaded && !articles.hasMoreArticles && !articles.isFetching) {
         noMoreFrag = <div className="weui-loadmore weui-loadmore_line">
             <span className="weui-loadmore__tips">无更多内容</span>
         </div>

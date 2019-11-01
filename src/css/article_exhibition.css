@@ -44,7 +44,7 @@
   top: 0;
   left: 0;
   background: rgb(0,0,0);
-  background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0) 70%);
+  background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0) 40%);
 }
 
 .pq-article-exhibition .item .poster {

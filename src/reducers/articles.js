@@ -8,7 +8,7 @@ import {
 
 const defaultState = {
     pageLoaded: 0,
-    pageSize: 10, //每页几条
+    pageSize: 20, //每页几条
     hasMoreArticles: true,
     isFetching: false,
     articleList: [],
