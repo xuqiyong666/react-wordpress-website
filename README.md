@@ -6,6 +6,7 @@
 - ~~对接wordpress rest api~~
 - ~~redux~~
 - prop-types
+- 分类页
 
 
 ---
