@@ -3,8 +3,9 @@
 
 ### TODO List
 - ~~react-router~~
-- 对接wordpress rest api
-- redux
+- ~~对接wordpress rest api~~
+- ~~redux~~
+- prop-types
 
 
 ---
