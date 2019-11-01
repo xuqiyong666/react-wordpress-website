@@ -3,9 +3,16 @@ import React from 'react'
 import Layout from '../components/Layout'
 
 import {
+    Link,
     useParams,
     useLocation
 } from "react-router-dom";
+
+const Colors = [
+    "#4e54c8", //亮蓝色
+    "rgb(95, 47, 144)", //紫色
+    "rgb(13, 91, 171)", //深蓝色
+]
 
 class CategoryPage extends React.Component {
 
@@ -14,13 +21,25 @@ class CategoryPage extends React.Component {
         const header = <Header categoryId={this.props.categoryId} />
         const content = <Content categoryId={this.props.categoryId} />
 
+        const headerColor = this.getHeaderColor()
+
         return (
-            <Layout header={header} content={content} />
+            <Layout header={header} content={content} headerColor={headerColor} />
         )
     }
 
     componentDidMount() {
         console.log(`CategoryPage DiD mount: ${this.props.categoryId}`)
+    }
+
+    getHeaderColor(){
+
+        if(!this.props.categoryId){
+            return
+        }
+
+        const index = this.props.categoryId % Colors.length;
+        return Colors[index]
     }
 }
 
@@ -45,6 +64,8 @@ class Content extends React.Component {
                 <p>categoryId = {this.props.categoryId}</p>
 
                 <h1>TODO 分类页</h1>
+
+                <Link to="/">回到首页</Link>
             </div>
         )
     }

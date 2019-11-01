@@ -2,24 +2,34 @@
 import React from 'react'
 import Layout from '../components/Layout'
 
-// import { Link } from 'react-router-dom';
+import FlowArticles from '../containers/FlowArticles'
 import wordpressClient from '../utils/wordpressClient'
 
 import articleReader from '../utils/articleReader'
 
 class ArticlePage extends React.Component {
 
+    defaultState() {
+        return ({
+            article: null
+        })
+    }
+
     constructor(props) {
         super(props)
-        this.state = {
-            article: null
-        }
+        this.state = this.defaultState()
     }
 
     render() {
 
         const header = <Header articleId={this.props.articleId} article={this.state.article} />
-        const content = <Content articleId={this.props.articleId} article={this.state.article} />
+        const content = (
+            <Content
+                articleId={this.props.articleId}
+                article={this.state.article}
+                articleList={this.props.articles.articleList}
+            />
+        )
 
         return (
             <Layout header={header} content={content} ></Layout>
@@ -28,6 +38,17 @@ class ArticlePage extends React.Component {
 
     componentDidMount() {
         this.get_or_fetch_article(this.props.articleId)
+    }
+
+    componentDidUpdate(prevProps) {
+        if(this.props.articleId !== prevProps.articleId){
+            this.refresh()
+        }
+    }
+
+    refresh(){
+        this.setState(this.defaultState())
+        this.componentDidMount()
     }
 
     //文章从redux中直接拿，或者从接口中获取
@@ -91,29 +112,39 @@ class Content extends React.Component {
 
         return (
 
-            <div className="pq-article-wrap">
+            <React.Fragment>
+                <div className="pq-article-wrap">
 
-                {thumbFrag}
+                    {thumbFrag}
 
-                <article className="weui-article">
+                    <article className="weui-article">
 
-                    <div className="top-bar-space">
-                        <div className="top-bar">
-                            <div className="left">
-                                <i className="far fa-clock icon"></i>
-                                <span>{updateDate }</span>
-                            </div>
-                            <div className="right">
-                                <span>{ author && author.name}</span>
+                        <div className="top-bar-space">
+                            <div className="top-bar">
+                                <div className="left">
+                                    <i className="far fa-clock icon"></i>
+                                    <span>{updateDate}</span>
+                                </div>
+                                <div className="right">
+                                    <span>{author && author.name}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div dangerouslySetInnerHTML={{ __html: article.content.rendered }}></div>
+                        <div dangerouslySetInnerHTML={{ __html: article.content.rendered }}></div>
 
-                </article>
-            </div>
+                    </article>
+                </div>
 
+                <div className="pq-section-title">
+                    <i className="far fa-book icon"></i>
+                    <span>更多文章</span>
+                </div>
+
+                <FlowArticles columnSize={3} />
+
+
+            </React.Fragment>
         )
     }
 }

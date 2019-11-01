@@ -6,10 +6,6 @@ class Layout extends React.Component {
 
     constructor(props) {
         super(props)
-
-        this.default = {
-            backgroundColor: "rgba(0,0,0,1)"
-        }
     }
 
     render() {
@@ -18,6 +14,8 @@ class Layout extends React.Component {
 
         const t1Class = header ? "header-title-show" : ""
         const t2Class = header ? "with-border" : ""
+
+        const backgroundColor = this.props.headerColor || "rgba(0,0,0,1)"
 
         return (
             <div className='pq-layout'>
@@ -46,7 +44,7 @@ class Layout extends React.Component {
                         </div>
                     </div>
 
-                    <div className="pure_css_animated_background" style={{ background: this.default.backgroundColor }}>
+                    <div className="pure_css_animated_background" style={{ background: backgroundColor }}>
                         <span className="sprite n1 animate"></span>
                         <span className="sprite n2 animate"></span>
                         <span className="sprite n3 animate"></span>
@@ -64,7 +62,7 @@ class Layout extends React.Component {
                             {header}
                         </div>
                     </div>
-                    <div className="pg-header-space" style={{ background: this.default.backgroundColor }}></div>
+                    <div className="pg-header-space" style={{ background: backgroundColor }}></div>
 
                 </div>
 
@@ -72,7 +70,7 @@ class Layout extends React.Component {
                     {content}
                 </div>
 
-                <div className="pure_css_animated_background" style={{ background: this.default.backgroundColor }}>
+                <div className="pure_css_animated_background" style={{ background: backgroundColor }}>
                     <span className="sprite n1 animate"></span>
                     <span className="sprite n2 animate"></span>
                     <span className="sprite n3 animate"></span>
