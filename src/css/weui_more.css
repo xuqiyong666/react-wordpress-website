@@ -123,3 +123,17 @@
   margin-right: 0;
 }
 
+.weui-article .wp-block-separator {
+  border: 0;
+  margin: 1.65em auto;
+  max-width: 100px;
+}
+
+.weui-article hr {
+  box-sizing: content-box;
+  overflow: visible;
+  background-color: #bbb;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
