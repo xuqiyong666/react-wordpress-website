@@ -18,8 +18,12 @@ class CategoryPage extends React.Component {
 
     render() {
 
-        const header = <Header categoryId={this.props.categoryId} />
-        const content = <Content categoryId={this.props.categoryId} />
+        const categoryId = this.props.categoryId
+
+        document.title = `分类${categoryId} - 大勇的博客`
+
+        const header = <Header categoryId={categoryId} />
+        const content = <Content categoryId={categoryId} />
 
         const headerColor = this.getHeaderColor()
 

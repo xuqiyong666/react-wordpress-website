@@ -22,11 +22,17 @@ class ArticlePage extends React.Component {
 
     render() {
 
-        const header = <Header articleId={this.props.articleId} article={this.state.article} />
+        const article = this.state.article
+
+        if(article){
+            document.title = `${article.title.rendered} - 大勇的博客`
+        }
+
+        const header = <Header articleId={this.props.articleId} article={article} />
         const content = (
             <Content
                 articleId={this.props.articleId}
-                article={this.state.article}
+                article={article}
                 articleList={this.props.articles.articleList}
             />
         )

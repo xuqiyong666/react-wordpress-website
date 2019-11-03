@@ -27,9 +27,9 @@ import 'weui';
 import 'react-weui/build/packages/react-weui.css';
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
+    Switch,
+    Route,
+    withRouter
 } from "react-router-dom";
 
 import HomePage from './containers/HomePage'
@@ -44,38 +44,47 @@ const scrollery = require('cssplus/scrollery')
 
 class App extends React.Component {
 
-  render() {
-    return (
-      <Router>
-        <ScrollToTop />
-        <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route exact path="/category">
-            <CategoryPageWithQuery />
-          </Route>
-          <Route exact path="/category/:categoryId">
-            <CategoryPageWithParams />
-          </Route>
-          <Route exact path="/article/:articleId">
-            <ArticlePageWithParams />
-          </Route>
-          <Route>
-            <NotFoundPage />
-          </Route>
-        </Switch>
-      </Router>
-    )
-  }
+    render() {
+        return (
+            <React.Fragment>
+                <ScrollToTop />
+                <Switch>
+                    <Route exact path="/">
+                        <HomePage />
+                    </Route>
+                    <Route exact path="/category">
+                        <CategoryPageWithQuery />
+                    </Route>
+                    <Route exact path="/category/:categoryId">
+                        <CategoryPageWithParams />
+                    </Route>
+                    <Route exact path="/article/:articleId">
+                        <ArticlePageWithParams />
+                    </Route>
+                    <Route>
+                        <NotFoundPage />
+                    </Route>
+                </Switch>
+            </React.Fragment>
+        )
+    }
 
-  componentDidMount() {
-    this.activeScrollery()
-  }
+    componentDidMount() {
 
-  activeScrollery() {
-    scrollery.load()
-  }
+        this.activeScrollery()
+
+        this.props.history.listen((location) => {
+            this.resetTitle()
+        })
+    }
+
+    resetTitle(){
+        document.title = "大勇的博客"
+    }
+
+    activeScrollery() {
+        scrollery.load()
+    }
 }
 
-export default App;
+export default withRouter(App);
