@@ -283,7 +283,9 @@ span._only_mobile {
 }
 
 .pq-header .logo img {
-  height: 60px;
+  height: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   vertical-align: top;
 }
 

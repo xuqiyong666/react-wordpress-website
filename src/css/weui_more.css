@@ -1,41 +1,40 @@
-
 .weui-dialog {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 .weui-article {
-  position: relative;
-  background: white;
-  line-height: 170%;
+    position: relative;
+    background: white;
+    line-height: 170%;
 }
 
 .weui-article,
 .weui-article * {
-  letter-spacing: 0 !important;
+    letter-spacing: 0 !important;
 }
 
 .weui-article video {
-  max-height: 600px;
+    max-height: 600px;
 }
 
 .weui-article img {
-  display: block;
+    display: block;
 }
 
 .weui-article pre {
-  overflow-x: scroll;
+    overflow-x: scroll;
 }
 
 .weui-article figure {
-  margin: 1em 0;
+    margin: 1em 0;
 }
 
 .weui-article figcaption {
-  margin-top: .5em;
-  margin-bottom: 1.5em;
-  font-style: italic;
-  color: #555d66;
-  font-size: 13px;
+    margin-top: .5em;
+    margin-bottom: 1.5em;
+    font-style: italic;
+    color: #555d66;
+    font-size: 13px;
 }
 
 .weui-article p,
@@ -45,43 +44,43 @@
 .weui-article h4,
 .weui-article h5,
 .weui-article h6 {
-  min-height: 12px;
+    min-height: 12px;
 }
 
 .weui-article .top-bar-space {
-  width: 100%;
-  height: 20px;
+    width: 100%;
+    height: 20px;
 }
 
 .weui-article .top-bar {
-  width: 100%;
-  font-size: 12px;
-  position: absolute;
-  height: 20px;
-  line-height: 20px;
-  padding: 0 10px;
-  top: 10px;
-  left: 0;
-  vertical-align: top;
-  color: #888;
+    width: 100%;
+    font-size: 12px;
+    position: absolute;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    top: 10px;
+    left: 0;
+    vertical-align: top;
+    color: #888;
 }
 
 .weui-article .top-bar .icon {
-  font-size: 12px;
-  margin-right: 5px;
-  vertical-align: top;
+    font-size: 12px;
+    margin-right: 5px;
+    vertical-align: top;
 }
 
 .weui-article .top-bar .left {
-  float: left;
-  display: inline-flex;
-  align-items: center;
+    float: left;
+    display: inline-flex;
+    align-items: center;
 }
 
 .weui-article .top-bar .right {
-  float: right;
-  display: inline-flex;
-  align-items: center;
+    float: right;
+    display: inline-flex;
+    align-items: center;
 }
 
 .weui.icon-box {
@@ -95,7 +94,7 @@
 }
 
 .weui.icon-box.center {
-  justify-content: center;
+    justify-content: center;
 }
 
 .weui.icon-box i {
@@ -119,21 +118,30 @@
 }
 
 .weui-btn-area.pq-modify {
-  margin-left: 0;
-  margin-right: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .weui-article .wp-block-separator {
-  border: 0;
-  margin: 1.65em auto;
-  max-width: 100px;
+    border: 0;
+    margin: 1.65em auto;
+    max-width: 100px;
 }
 
 .weui-article hr {
-  box-sizing: content-box;
-  overflow: visible;
-  background-color: #bbb;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
+    box-sizing: content-box;
+    overflow: visible;
+    background-color: #bbb;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+
+.weui-article .wp-block-code {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
 }

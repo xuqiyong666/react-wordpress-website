@@ -4,10 +4,6 @@ import { Link } from "react-router-dom"
 
 class Layout extends React.Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     render() {
 
         const { header, content } = this.props
