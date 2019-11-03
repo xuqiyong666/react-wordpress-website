@@ -1,10 +1,9 @@
-
 .pq-v1-table-card {
-  font-size: 12px;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 1px 0 0 #dfe0f1, 0 1px 3px 0 rgba(182,188,224,.5), 0 4px 12px 0 rgba(218,221,238,.5);
+    font-size: 12px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #dfe0f1, 0 1px 3px 0 rgba(182, 188, 224, .5), 0 4px 12px 0 rgba(218, 221, 238, .5);
 }
 
 .pq-v1-table-card .module_title {
@@ -16,8 +15,8 @@
 }
 
 .pq-v1-table-card .module_button {
-  float: right;
-  margin-left: 8px;
+    float: right;
+    margin-left: 8px;
 }
 
 .pq-v1-table-card .module__list-item {

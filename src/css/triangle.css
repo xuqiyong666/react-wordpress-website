@@ -1,38 +1,37 @@
-
 /* 三角形 */
 
 .pq-triangle-up-6 {
-  width: 0;
-  height: 0;
-  border-bottom: 6px solid #FFFFFF;
-  border-right: 6px solid transparent;
-  border-left: 6px solid transparent;
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  margin-left: -6px;
+    width: 0;
+    height: 0;
+    border-bottom: 6px solid #FFFFFF;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    margin-left: -6px;
 }
 
 .pq-triangle-up-8 {
-  width: 0;
-  height: 0;
-  border-bottom: 8px solid #FFFFFF;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  margin-left: -8px;
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #FFFFFF;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    margin-left: -8px;
 }
 
 .pq-triangle-up-10 {
-  width: 0;
-  height: 0;
-  border-bottom: 10px solid #FFFFFF;
-  border-right: 10px solid transparent;
-  border-left: 10px solid transparent;
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #FFFFFF;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
 }

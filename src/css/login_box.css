@@ -1,75 +1,74 @@
-
 .pq-login-box {
-  width: 500px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 50px 30px;
-  padding-top: 80px;
-  position: relative;
-  background: rgba(50,50,50,0.6);
-  margin-top: 100px;
-  margin-bottom: 10px;
-  text-align: center;
+    width: 500px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 50px 30px;
+    padding-top: 80px;
+    position: relative;
+    background: rgba(50, 50, 50, 0.6);
+    margin-top: 100px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .pq-login-box .title {
-  font-size: 20px;
-  margin-bottom: 30px;
-  color: white;
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: white;
 }
 
 .pq-login-box .font-write {
-  color: white;
+    color: white;
 }
 
 .pq-login-box .other-area {
-  margin-top: 14px;
-  font-size: 12px;
+    margin-top: 14px;
+    font-size: 12px;
 }
 
 .pq-login-box .other-area .left {
-  float: left;
+    float: left;
 }
 
 .pq-login-box .other-area .right {
-  float: right;
+    float: right;
 }
 
 .pq-login-box .other-area:after {
-  content: " ";
-  display: block;
-  padding-bottom: 1px;
-  clear: both;
+    content: " ";
+    display: block;
+    padding-bottom: 1px;
+    clear: both;
 }
 
 .pq-login-box a.link {
-  color: #eee;
+    color: #eee;
 }
 
 .pq-login-box .pq-login-inner {
-  text-align: left;
+    text-align: left;
 }
+
 
 /* Pad样式 */
+
 @media screen and (max-width: 840px) {
-
-  .pq-login-box {
-    width: 60%;
-    min-width: 400px;
-  }
-
+    .pq-login-box {
+        width: 60%;
+        min-width: 400px;
+    }
 }
 
+
 /* Mobile样式 */
+
 @media screen and (max-width: 440px) {
-
-  .pq-login-box {
-    width: 94%;
-    min-width: 300px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 40px;
-    margin-top: 60px;
-  }
-
+    .pq-login-box {
+        width: 94%;
+        min-width: 300px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 40px;
+        margin-top: 60px;
+    }
 }

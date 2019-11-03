@@ -1,5 +1,4 @@
-
-  .pq-console {
+.pq-console {
     position: relative;
     display: flex;
     -webkit-box-pack: start;
@@ -12,9 +11,9 @@
     box-shadow: border-box;
     padding-top: 60px;
     font-size: 12px;
-  }
+}
 
-  .pq-console > .pq-console-sidebar {
+.pq-console>.pq-console-sidebar {
     order: 0;
     height: 100%;
     background-color: #EAEDF1;
@@ -26,91 +25,90 @@
     z-index: 100;
     flex: 0 1 auto;
     transition: width 0.3s ease-in-out 0s, min-width 0.3s ease-in-out 0s;
-  }
+}
 
-  
-  .pq-console-sidebar .product-nav-title.main {
-      font-weight: bold;
-      text-indent: 20px;
-      font-size: 14px;
-  }
+.pq-console-sidebar .product-nav-title.main {
+    font-weight: bold;
+    text-indent: 20px;
+    font-size: 14px;
+}
 
-  .pq-console-sidebar .product-nav-title {
-      width: 180px;
-      height: 70px;
-      line-height: 70px;
-      background: #D9DEE4;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-  }
+.pq-console-sidebar .product-nav-title {
+    width: 180px;
+    height: 70px;
+    line-height: 70px;
+    background: #D9DEE4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
-  .pq-console-sidebar .product-nav-list {
-      position: absolute;
-      top: 70px;
-      left: 0px;
-      right: 0px;
-      bottom: 0px;
-      overflow-y: auto;
-      overflow-x: hidden;
-      box-sizing: border-box;
-  }
-
-  .pq-console-sidebar .product-nav-list * {
+.pq-console-sidebar .product-nav-list {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
     box-sizing: border-box;
-  }
+}
 
-  .pq-console-sidebar .product-nav-list ul {
-      list-style: none;
-      padding: 0px;
-      margin: 0px;
-  }
+.pq-console-sidebar .product-nav-list * {
+    box-sizing: border-box;
+}
 
-  .pq-console-sidebar .product-nav-list li a {
-      width: 180px;
-      height: 40px;
-      line-height: 40px;
-      display: block;
-      color: #333;
-  }
+.pq-console-sidebar .product-nav-list ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
 
-  .pq-console-sidebar .product-nav-list li.active a {
+.pq-console-sidebar .product-nav-list li a {
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    color: #333;
+}
+
+.pq-console-sidebar .product-nav-list li.active a {
     background-color: #f7f7f7;
-  }
-  
-  .pq-console-sidebar .product-nav-list .nav-icon {
-      width: 30px;
-      height: 40px;
-      float: left;
-      text-align: center;
-      font-size: 16px;
-      color: #333;
-  }
+}
 
-  .pq-console-sidebar .product-nav-list .nav-title {
-      width: 138px;
-      float: left;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-  }
+.pq-console-sidebar .product-nav-list .nav-icon {
+    width: 30px;
+    height: 40px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
 
-  .pq-console > .pq-console-tag {
+.pq-console-sidebar .product-nav-list .nav-title {
+    width: 138px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pq-console>.pq-console-tag {
     order: 0;
     height: 100%;
     width: 0px;
     position: relative;
     flex: 0 1 auto;
-  }
+}
 
-  .pq-console > .pq-console-main {
-      order: 1;
-      height: 100%;
-      overflow-y: auto;
-      flex: 1 1 auto;
-  }
+.pq-console>.pq-console-main {
+    order: 1;
+    height: 100%;
+    overflow-y: auto;
+    flex: 1 1 auto;
+}
 
-  .pq-console-main > .main-title-bar {
+.pq-console-main>.main-title-bar {
     display: block;
     height: 50px;
     line-height: 50px;
@@ -125,20 +123,22 @@
     background: white;
     box-shadow: 0 1px 0 0 #D9DEE4, 0 1px 3px 0 #D9DEE4, 0 4px 12px 0 #D9DEE4;
     /*box-shadow: 0 0 0;*/
-  }
+}
 
-  /* Pad样式 */
-  @media screen and (max-width: 840px) {
 
-    .pq-console > .pq-console-sidebar {
-      display: none;
+/* Pad样式 */
+
+@media screen and (max-width: 840px) {
+    .pq-console>.pq-console-sidebar {
+        display: none;
     }
+}
 
-  }
 
-  /* Mobile样式 */
-  @media screen and (max-width: 440px) {
-    .pq-console > .pq-console-main {
-      padding: 0;
+/* Mobile样式 */
+
+@media screen and (max-width: 440px) {
+    .pq-console>.pq-console-main {
+        padding: 0;
     }
-  }
+}

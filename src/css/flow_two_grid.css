@@ -1,65 +1,64 @@
 /* 响应式左右分栏布局 */
 
 .pq-flow-two-grid {
-  width: 100%;
-  position: relative;
+    width: 100%;
+    position: relative;
 }
 
-.pq-flow-two-grid > .main-column {
-  float: left;
-  width: 70%;
-  box-sizing: border-box;
-  padding-right: 10px;
+.pq-flow-two-grid>.main-column {
+    float: left;
+    width: 70%;
+    box-sizing: border-box;
+    padding-right: 10px;
 }
 
-.pq-flow-two-grid > .main-column:after {
-  content: " ";
-  display: block;
-  clear: both;
-  padding-bottom: 1px;
-  width: 100%;
+.pq-flow-two-grid>.main-column:after {
+    content: " ";
+    display: block;
+    clear: both;
+    padding-bottom: 1px;
+    width: 100%;
 }
 
-.pq-flow-two-grid > .side-column {
-  float: left;
-  width: 30%;
-  padding: 0 10px;
-  box-sizing: border-box;
-  position: relative;
+.pq-flow-two-grid>.side-column {
+    float: left;
+    width: 30%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    position: relative;
 }
 
-.pq-flow-two-grid > .side-column:after {
-  content: " ";
-  display: block;
-  clear: both;
-  padding-bottom: 1px;
-  width: 100%;
+.pq-flow-two-grid>.side-column:after {
+    content: " ";
+    display: block;
+    clear: both;
+    padding-bottom: 1px;
+    width: 100%;
 }
 
 .pq-flow-two-grid:after {
-  display: block;
-  clear: both;
-  padding-bottom: 1px;
-  width: 100%;
+    display: block;
+    clear: both;
+    padding-bottom: 1px;
+    width: 100%;
 }
+
 
 /* Pad样式 */
+
 @media screen and (max-width: 840px) {
-
-  .pq-flow-two-grid > .main-column {
-    width: 100%;
-    padding: 0;
-    padding: 0;
-    margin: 0;
-  }
-
-  .pq-flow-two-grid > .side-column {
-    width: 100%;
-  }
-
+    .pq-flow-two-grid>.main-column {
+        width: 100%;
+        padding: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .pq-flow-two-grid>.side-column {
+        width: 100%;
+    }
 }
+
 
 /* Mobile样式 */
-@media screen and (max-width: 440px) {
 
-}
+@media screen and (max-width: 440px) {}

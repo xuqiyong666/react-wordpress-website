@@ -1,32 +1,31 @@
-
 .pq-v1-text-info-card {
-  font-size: 12px;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 1px 0 0 #dfe0f1, 0 1px 3px 0 rgba(182,188,224,.5), 0 4px 12px 0 rgba(218,221,238,.5);
+    font-size: 12px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #dfe0f1, 0 1px 3px 0 rgba(182, 188, 224, .5), 0 4px 12px 0 rgba(218, 221, 238, .5);
 }
 
-.pq-v1-text-info-card > .module_title {
-  color: #0a1633;
-  font-weight: 700;
-  margin-bottom: 12px;
-  font-size: 16px;
-  line-height: 32px;
+.pq-v1-text-info-card>.module_title {
+    color: #0a1633;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 32px;
 }
 
-.pq-v1-text-info-card > .module_text_section {
-  font-size: 16px;
-  padding: 1rem;
-  padding-top: 0;
-  border-bottom: 1px solid #eee;
+.pq-v1-text-info-card>.module_text_section {
+    font-size: 16px;
+    padding: 1rem;
+    padding-top: 0;
+    border-bottom: 1px solid #eee;
 }
 
-.pq-v1-text-info-card > .module_bottom {
-  text-align: center;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+.pq-v1-text-info-card>.module_bottom {
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }

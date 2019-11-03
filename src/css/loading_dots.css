@@ -1,55 +1,53 @@
-
 .pq-loading-dots {
-  margin: 20 auto;
-  display: inline-block;
-  width: 80px;
+    margin: 20 auto;
+    display: inline-block;
+    width: 80px;
 }
 
 .pq-loading-dots .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  border-style: solid;
-  border-width: 1px;
-  margin: 0 3px;
-  border-color: #222;
-  background-color: #222;
-  animation: pq_loading_dots 2s linear infinite;
-  display: inline-block;
-  box-sizing: border-box;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0 3px;
+    border-color: #222;
+    background-color: #222;
+    animation: pq_loading_dots 2s linear infinite;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 .pq-loading-dots .dot.d1 {
-  animation-delay: -0.3s;
+    animation-delay: -0.3s;
 }
 
 .pq-loading-dots .dot.d2 {
-  animation-delay: -0.6s;
+    animation-delay: -0.6s;
 }
 
-
 .pq-loading-dots .dot.d3 {
-  animation-delay: -0.9s;
+    animation-delay: -0.9s;
 }
 
 .pq-loading-dots .dot.d4 {
-  animation-delay: -1.2s;
+    animation-delay: -1.2s;
 }
 
 .pq-loading-dots .dot.d5 {
-  animation-delay: -1.5s;
+    animation-delay: -1.5s;
 }
 
 .pq-loading-dots .dot.d6 {
-  animation-delay: -1.8s;
+    animation-delay: -1.8s;
 }
 
 @keyframes pq_loading_dots {
-    0%,100% {
+    0%,
+    100% {
         border-color: #222;
         background-color: #222
     }
-
     50% {
         border-color: #ccc;
         background-color: #ccc
