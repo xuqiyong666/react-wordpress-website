@@ -28,10 +28,13 @@ function categories(state = defaultState, action) {
     }
 }
 
+//菜单栏上忽略的分类
+const HiddenCategorySlugs = new Set(["uncategorized", "test"])
+
 function fetch_categories_success(state, newCategories) {
 
-    let categoryList = [...state.categoryList]
-    let categoryMapping = { ...state.categoryMapping }
+    let categoryList = []
+    let categoryMapping = {}
 
     lodash.each(newCategories, (category) => {
 
@@ -44,7 +47,12 @@ function fetch_categories_success(state, newCategories) {
             return
         }
 
-        categoryList.push(category)
+        category.color = get_category_color(categoryId)
+
+        if (!HiddenCategorySlugs.has(category.slug)) {
+            categoryList.push(category)
+        }
+
         categoryMapping[categoryId] = category
     })
 
@@ -55,6 +63,19 @@ function fetch_categories_success(state, newCategories) {
         categoryList,
         categoryMapping
     }
+}
+
+const Colors = [
+    "rgb(13, 91, 171)", //深蓝色
+    "#000000", //黑色
+    "#4e54c8", //亮蓝色
+    "rgb(95, 47, 144)", //紫色
+]
+
+function get_category_color(categoryId) {
+
+    const index = categoryId % Colors.length;
+    return Colors[index]
 }
 
 export default categories

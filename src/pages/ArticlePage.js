@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../containers/Layout'
 
 import FlowArticles from '../containers/FlowArticles'
 import wordpressClient from '../utils/wordpressClient'
@@ -67,8 +67,6 @@ class ArticlePage extends React.Component {
         }
 
         let response = await wordpressClient.fetch_article(articleId)
-
-        // console.log(response)
 
         let rpArticle = response.data
         if (rpArticle && rpArticle.id) {

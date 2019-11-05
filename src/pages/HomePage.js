@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../containers/Layout'
 import FlowArticles from '../containers/FlowArticles'
 
 import { Link } from 'react-router-dom';
@@ -16,8 +16,8 @@ class HomePage extends React.Component {
                 stickArticles={this.props.stickArticles}
                 articles={this.props.articles}
                 fetchArticles={this.props.fetchArticles}
+                categories={this.props.categories}
             />
-
         )
         return (
             <Layout content={content} ></Layout>
@@ -26,6 +26,7 @@ class HomePage extends React.Component {
 
     componentDidMount() {
         this.props.fetchStickArticles()
+        this.props.fetchCategories()
     }
 }
 
@@ -41,42 +42,31 @@ class Content extends React.Component {
 
     render() {
 
-        const stArticles = this.props.stickArticles.articleList
+        const { categories, stickArticles } = this.props
+        const { articleList } = stickArticles
+        const { categoryList } = categories
+
         let stickArticlesFrag
-        if (stArticles.length >= 3) {
+        if (articleList.length >= 3) {
             stickArticlesFrag = (
                 <div className="pq-article-exhibition">
                     <div className="big-part">
-                        <StickArticle article={stArticles[0]} />
+                        <StickArticle article={articleList[0]} />
                     </div>
                     <div className="small-part">
-                        <StickArticle article={stArticles[1]} side={true} orderClass="first" />
-                        <StickArticle article={stArticles[2]} side={true} />
+                        <StickArticle article={articleList[1]} side={true} orderClass="first" />
+                        <StickArticle article={articleList[2]} side={true} />
                     </div>
                 </div>
             )
         }
 
-        let categoriesFrag
-        categoriesFrag = (
-            <div className="pq-index-categories">
-                <Link to="/category/11">
-                    <span>分类11</span>
-                </Link>
-                <Link to="/category/22">
-                    <span>分类22</span>
-                </Link>
-                <Link to="/category/33">
-                    <span>分类33</span>
-                </Link>
-            </div>
-        )
-
         return (
             <React.Fragment>
 
                 {stickArticlesFrag}
-                {categoriesFrag}
+
+                <BodyCategories categoryList={categoryList} />
 
                 <div className="pq-section-title">
                     <i className="far fa-book icon"></i>
@@ -128,6 +118,26 @@ function StickArticle(props) {
             {coverFrag}
             {maskFrag}
         </Link>
+    )
+}
+
+
+function BodyCategories(props) {
+
+    const { categoryList } = props
+
+    if (!categoryList.length) {
+        return null
+    }
+
+    const categoryFrags = categoryList.map((category) => {
+        return <Link to={`/category/${category.id}`} key={category.id}>{category.name}</Link>
+    })
+
+    return (
+        <div className="pq-index-categories">
+            {categoryFrags}
+        </div>
     )
 }
 

@@ -16,11 +16,11 @@ export const fetchStickArticles = () => (dispatch, getState) => {
     let stickArticles = state.stickArticles
 
     if (stickArticles.isFetching) {
-        return Promise.resolve()
+        return Promise.resolve(stickArticles)
     }
 
     if (stickArticles.isLoaded) {
-        return Promise.resolve()
+        return Promise.resolve(stickArticles)
     }
 
     dispatch(fetchStickArticlesStart())

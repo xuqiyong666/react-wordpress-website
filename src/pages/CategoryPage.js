@@ -1,59 +1,86 @@
 
 import React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../containers/Layout'
 
 import {
-    Link,
-    useParams,
-    useLocation
+    Link
 } from "react-router-dom";
 
-const Colors = [
-    "#4e54c8", //亮蓝色
-    "rgb(95, 47, 144)", //紫色
-    "rgb(13, 91, 171)", //深蓝色
-]
+import FlowArticles from '../components/FlowArticles'
 
 class CategoryPage extends React.Component {
 
+    defaultState() {
+        return ({
+            categoory: null
+        })
+    }
+
+    constructor(props) {
+        super(props)
+        this.state = this.defaultState()
+    }
+
     render() {
 
-        const categoryId = this.props.categoryId
+        const category = this.getRenderCategory()
 
-        document.title = `分类${categoryId} - 大勇的博客`
+        if (!category) {
+            return null
+        }
 
-        const header = <Header categoryId={categoryId} />
-        const content = <Content categoryId={categoryId} />
+        document.title = `${category.name} - 大勇的博客`
 
-        const headerColor = this.getHeaderColor()
+        const { categories } = this.props
+
+        const header = <Header category={category} />
+        const content = <Content category={category} categories={categories} key={category.id} />
 
         return (
-            <Layout header={header} content={content} headerColor={headerColor} />
+            <Layout header={header} content={content} headerColor={category.color} />
         )
     }
 
     componentDidMount() {
-        console.log(`CategoryPage DiD mount: ${this.props.categoryId}`)
+        this.props.fetchCategories()
     }
 
-    getHeaderColor(){
+    componentDidUpdate(prevProps) {
+        if (this.props.categoryId !== prevProps.categoryId) {
+            this.refresh()
+        }
+    }
 
-        if(!this.props.categoryId){
+    refresh() {
+        this.setState(this.defaultState())
+        this.componentDidMount()
+    }
+
+    getRenderCategory() {
+
+        const categoryId = this.props.categoryId
+
+        if (!categoryId) {
             return
         }
 
-        const index = this.props.categoryId % Colors.length;
-        return Colors[index]
+        const categoryMapping = this.props.categories.categoryMapping
+
+        return categoryMapping[categoryId]
     }
+
 }
 
 class Header extends React.Component {
     render() {
+
+        const { category } = this.props
+
         return (
             <div>
                 <div className="text-category">
-                    <div className="title">分类{this.props.categoryId}</div>
-                    <div className="intro">分类描述分类描述分类描述分类描述分类描述分类描述</div>
+                    <div className="title">{category.name}</div>
+                    <div className="intro">{category.description}</div>
                 </div>
             </div>
         )
@@ -61,38 +88,80 @@ class Header extends React.Component {
 }
 
 class Content extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state = this.defaultState()
+    }
+
+    defaultState(){
+        return {
+            articles: this.defaultArticles()
+        }
+    }
+
+    defaultArticles() {
+        return {
+            pageLoaded: 0,
+            pageSize: 20, //每页几条
+            hasMoreArticles: false,
+            isFetching: false,
+            articleList: []
+        }
+    }
+
     render() {
+
+        const { category, categories } = this.props
+
         return (
-            <div style={{ height: "600px", padding: "10px", backgroundColor: "#1fc8db", backgroundImage: "linear-gradient(141deg,#9fb8ad 0%,#1fc8db 51%,#2cb5e8 75%)" }}>
-                <h3>Category Content</h3>
-                <p>categoryId = {this.props.categoryId}</p>
+            <React.Fragment>
 
-                <h1>TODO 分类页</h1>
+                <BodyCategories categoryList={categories.categoryList} />
 
-                <Link to="/">回到首页</Link>
-            </div>
+                <h1 style={{margin: "30px 0", textAlign: "center"}}>
+                    <span>TODO 加载"{category.name}"分类下文章列表</span>
+                    <Link to="/" style={{margin: "0 10px"}}>返回首页</Link>
+                </h1>
+                
+
+                <FlowArticles articles={this.state.articles} fetchArticles={this.fetchArticles.bind(this)} />
+
+            </React.Fragment>
         )
+    }
+
+    componentDidMount(){
+
+    }
+
+    fetchArticles() {
+
+        const { category } = this.props
+
+        console.log(`todo 加载文章列表 ${category.name}`)
+
+        return Promise.resolve()
     }
 }
 
-export function CategoryPageWithQuery() {
+function BodyCategories(props) {
 
-    const query = new URLSearchParams(useLocation().search);
+    const { categoryList } = props
 
-    const categoryId = parseInt(query.get("id"))
+    if (!categoryList.length) {
+        return null
+    }
 
-    return (
-        <CategoryPage categoryId={categoryId} />
-    );
-}
-
-export function CategoryPageWithParams() {
-
-    const { categoryId } = useParams();
+    const categoryFrags = categoryList.map((category) => {
+        return <Link to={`/category/${category.id}`} key={category.id}>{category.name}</Link>
+    })
 
     return (
-        <CategoryPage categoryId={categoryId} />
-    );
+        <div className="pq-index-categories">
+            {categoryFrags}
+        </div>
+    )
 }
 
 export default CategoryPage

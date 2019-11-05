@@ -166,7 +166,7 @@ function MoreArticleButtonArea(props) {
     }
 
     let noMoreFrag
-    if (page >= articles.pageLoaded && !articles.hasMoreArticles && !articles.isFetching) {
+    if (page > 1 && !articles.hasMoreArticles && !articles.isFetching) {
         noMoreFrag = <div className="weui-loadmore weui-loadmore_line">
             <span className="weui-loadmore__tips">无更多内容</span>
         </div>

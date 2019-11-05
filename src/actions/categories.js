@@ -16,11 +16,11 @@ export const fetchCategories = () => (dispatch, getState) => {
     let stateCategories = state.categories
 
     if (stateCategories.isFetching) {
-        return Promise.reject("categories is fetching")
+        return Promise.resolve(stateCategories)
     }
 
     if (stateCategories.isLoaded) {
-        return Promise.reject("categories is loaded")
+        return Promise.resolve(stateCategories)
     }
 
     dispatch(fetchCategoriesStart())

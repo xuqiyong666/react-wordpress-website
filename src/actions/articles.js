@@ -16,11 +16,11 @@ export const fetchArticles = () => (dispatch, getState) => {
     let stateArticles = state.articles
 
     if (stateArticles.isFetching) {
-        return Promise.reject("articles is fetching")
+        return Promise.reject(stateArticles)
     }
 
     if (!stateArticles.hasMoreArticles) {
-        return Promise.reject("no more articles")
+        return Promise.reject(stateArticles)
     }
 
     let nextPage = stateArticles.pageLoaded + 1

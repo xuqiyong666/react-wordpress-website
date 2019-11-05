@@ -6,7 +6,7 @@ class Layout extends React.Component {
 
     render() {
 
-        const { header, content } = this.props
+        const { header, content, categories } = this.props
 
         const t1Class = header ? "header-title-show" : ""
         const t2Class = header ? "with-border" : ""
@@ -19,7 +19,7 @@ class Layout extends React.Component {
                 <div className={`pq-header-wrap ${t1Class}`}>
                     <div className={`pq-header-top pq-layout ${t2Class}`}>
                         <div className="pq-header">
-                            <div className="left">
+                            <div className="left" style={{display: "none"}}>
                                 <i className="pq-icon fa-bars fas" onClick={this.open_mobile_nav.bind(this)} />
                             </div>
                             <div className="logo">
@@ -29,11 +29,7 @@ class Layout extends React.Component {
                             </div>
 
                             <div className="right">
-                                <div className="nav-item">
-                                    <Link to="/category/1" className="nav-link">分类1</Link>
-                                    <Link to="/category/2" className="nav-link">分类2</Link>
-                                    <Link to="/category/3" className="nav-link">分类3</Link>
-                                </div>
+                                <HeaderCategories categoryList={categories.categoryList} />
                             </div>
 
                             {/* {<UserInfo />} */}
@@ -101,12 +97,37 @@ class Layout extends React.Component {
         )
     }
 
+    componentDidMount() {
+        this.props.fetchCategories()
+    }
+
     open_mobile_nav() {
 
     }
 
 }
 
+function HeaderCategories(props) {
+
+    const { categoryList } = props
+
+    if (!categoryList.length) {
+        return null
+    }
+
+    const categoryFrags = categoryList.map((category) => {
+
+        return (
+            <Link to={`/category/${category.id}`} className="nav-link" key={category.id}>{category.name}</Link>
+        )
+    })
+
+    return (
+        <div className="nav-item">
+            {categoryFrags}
+        </div>
+    )
+}
 
 // function UserInfo(props) {
 //     return (
