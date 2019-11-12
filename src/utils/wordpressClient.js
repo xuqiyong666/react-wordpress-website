@@ -22,6 +22,20 @@ class WordpressClient {
         return axios.get(apiUrl, { params: apiParams })
     }
 
+    fetch_page_articles_in_category(categoryId, page, pageSize) {
+
+        const apiUrl = this.host + "/wp-json/wp/v2/posts"
+
+        const apiParams = {
+            _embed: 1,
+            page: page,
+            per_page: pageSize,
+            categories: categoryId
+        }
+
+        return axios.get(apiUrl, { params: apiParams })
+    }
+
     fetch_categories() {
         const apiUrl = this.host + "/wp-json/wp/v2/categories"
         const apiParams = {
@@ -31,7 +45,7 @@ class WordpressClient {
         return axios.get(apiUrl, { params: apiParams })
     }
 
-    fetch_stick_articles(){
+    fetch_stick_articles() {
 
         const apiUrl = this.host + "/wp-json/wp/v2/posts"
         const apiParams = {
@@ -44,7 +58,7 @@ class WordpressClient {
         return axios.get(apiUrl, { params: apiParams })
     }
 
-    fetch_article(articleId){
+    fetch_article(articleId) {
 
         const apiUrl = `${this.host}/wp-json/wp/v2/posts/${articleId}`
         const apiParams = {

@@ -20,7 +20,7 @@ function articles(state = defaultState, action) {
         case FETCH_ARTICLES_START:
             return { ...state, isFetching: true }
         case FETCH_ARTICLES_FAILED:
-            return { ...state, isFetching: false }
+            return fetch_articles_failed(state, action.error)
         case FETCH_ARTICLES_SUCCESS:
             return fetch_articles_success(state, action.articles)
         default:
@@ -28,6 +28,23 @@ function articles(state = defaultState, action) {
     }
 }
 
+function fetch_articles_failed(state, error) {
+
+    let hasMoreArticles = state.hasMoreArticles
+
+    console.log("fetch_articles_failed:")
+    console.log(error)
+
+    if (error.message === "Request failed with status code 400") {
+        hasMoreArticles = false
+    }
+
+    return {
+        ...state,
+        hasMoreArticles,
+        isFetching: false
+    }
+}
 
 function fetch_articles_success(state, newArticles) {
 

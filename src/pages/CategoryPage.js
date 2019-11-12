@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import FlowArticles from '../components/FlowArticles'
+import wordpressClient from '../utils/wordpressClient'
 
 class CategoryPage extends React.Component {
 
@@ -103,8 +104,8 @@ class Content extends React.Component {
     defaultArticles() {
         return {
             pageLoaded: 0,
-            pageSize: 20, //每页几条
-            hasMoreArticles: false,
+            pageSize: 10, //每页几条
+            hasMoreArticles: true,
             isFetching: false,
             articleList: []
         }
@@ -112,18 +113,12 @@ class Content extends React.Component {
 
     render() {
 
-        const { category, categories } = this.props
+        const { categories } = this.props
 
         return (
             <React.Fragment>
 
                 <BodyCategories categoryList={categories.categoryList} />
-
-                <h1 style={{margin: "30px 0", textAlign: "center"}}>
-                    <span>TODO 加载"{category.name}"分类下文章列表</span>
-                    <Link to="/" style={{margin: "0 10px"}}>返回首页</Link>
-                </h1>
-                
 
                 <FlowArticles articles={this.state.articles} fetchArticles={this.fetchArticles.bind(this)} />
 
@@ -135,13 +130,43 @@ class Content extends React.Component {
 
     }
 
-    fetchArticles() {
+    async fetchArticles() {
 
         const { category } = this.props
 
-        console.log(`todo 加载文章列表 ${category.name}`)
+        const stArticles = this.state.articles
+        const nextPage = stArticles.pageLoaded + 1
+        const pageSize = stArticles.pageSize
 
-        return Promise.resolve()
+        stArticles.isFetching = true
+        this.setState({articles: stArticles})
+
+        return wordpressClient.fetch_page_articles_in_category(category.id, nextPage, pageSize).then(response=>{
+
+            stArticles.isFetching = false
+
+            const newArticles = response.data
+
+            if(!newArticles || !newArticles.length){
+                return
+            }
+
+            stArticles.articleList.push(...newArticles)
+            stArticles.pageLoaded = stArticles.pageLoaded + 1
+            stArticles.hasMoreArticles = newArticles.length === stArticles.pageSize
+
+            this.setState({articles: stArticles})
+
+        }).catch(error=>{
+
+            stArticles.isFetching = false
+
+            if(error.message === "Request failed with status code 400"){
+                stArticles.hasMoreArticles = false
+            }
+            
+            this.setState({articles: stArticles})
+        })
     }
 }
 
