@@ -19,7 +19,7 @@ class Layout extends React.Component {
                 <div className={`pq-header-wrap ${t1Class}`}>
                     <div className={`pq-header-top pq-layout ${t2Class}`}>
                         <div className="pq-header">
-                            <div className="left" style={{display: "none"}}>
+                            <div className="left" style={{ display: "none" }}>
                                 <i className="pq-icon fa-bars fas" onClick={this.open_mobile_nav.bind(this)} />
                             </div>
                             <div className="logo">
@@ -89,8 +89,11 @@ class Layout extends React.Component {
                         <div className="intro">天空没有翅膀的痕迹，但我已飞过</div>
 
                         <div className="copyright">Copyright © 2012-2019 jeffrey6052.com ALL Rights Reserved</div>
-                        <div className="icp_number">沪ICP备17055983号-1</div>
-
+                        <div className="icp_number">
+                            <a href="https://beian.miit.gov.cn" style={{ color: "inherit" }} rel="nofollow" target="_blank">
+                                沪ICP备17055983号-1
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
