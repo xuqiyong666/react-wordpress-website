@@ -15,7 +15,7 @@ if [ $? -ne 0 ]; then
 fi
 
 ## 传输到远程服务器
-scp ./build.tar.gz root@calm-welcome:/root/upload/react-wordpress-website
+scp ./build.tar.gz root@calm-welcome:/www/react-wordpress-website
 
 ## 远程执行更新脚本
-ssh root@calm-welcome "/bin/bash -x /root/upload/react-wordpress-website/deploy.sh"
+ssh root@calm-welcome "/bin/bash -x /www/react-wordpress-website/deploy.sh"
